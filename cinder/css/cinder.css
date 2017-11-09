@@ -78,3 +78,47 @@ pre {
 footer > hr {
     width: 35%;
 }
+
+
+/*! Modification for RINGMesh Website*/
+
+a:focus {
+    outline: thin dotted;
+    background-color: #3083a1ff;
+}
+/*! Color of menu when you put your mouse on*/
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+/*! Color of menu when the matching page is displayed */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+/*! Color of menu when the submenus are displayed */
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+/*! Navigation bar style */
+.navbar {
+   min-height: 90px;
+   font-size: 20px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navbar-brand {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    float: left;
+    padding: 30px 30px;
+    font-size: 19px;
+    line-height: 21px;
+}
