@@ -1,14 +1,6 @@
----
-layout: page
-title: About
-permalink: /about/
-menu: main
-order: 5
----
+# Developers
 
-## Developers
-
-#### Current Developers
+## Current Developers
 
  * [Pierre Anquez](https://www.ring-team.org/home/team?view=user&limitstart=0&id=769)
  * [François Bonneau](https://www.ring-team.org/home/team?view=user&limitstart=0&id=329)
@@ -17,15 +9,21 @@ order: 5
  * [Antoine Mazuyer](https://www.ring-team.org/home/team?view=user&limitstart=0&id=589)
  * [Margaux Raguenel](https://www.ring-team.org/home/team?view=user&limitstart=0&id=780)
 
-#### Other contributors
+## Other contributors
 
  * [Jeanne Pellerin](https://www.ring-team.org/home/team?view=user&limitstart=0&id=161)
   was part of the project between 2014 - 2016 when she was at Weierstrass Institute - Total.
 
-## Publications
+# Publications
 
+## 2017
+Pellerin et al., [RINGMesh: A programming library for developing mesh-based geomodeling applications.](https://hal.archives-ouvertes.fr/hal-01493204/document),
+_Computers & Geosciences, 104_ pp.93-100.
 
-## Licence
+Chauvin et al., [Defining Proper Boundary Conditions in 3-D Structural Restoration: A Case Study Restoring a 3-D Forward Model of Suprasalt Extensional Structures](http://archives.datapages.com/data/bulletns/aop/2017-05-22/aapgbltn17154aop.html),
+_AAPG Bulletin_
+
+# Licence
 
 RINGMesh is licensed under the 3-clauses BSD License (also called "Revised BSD License",
 "New BSD License", or "Modified BSD License")
@@ -62,12 +60,12 @@ Ecole Nationale Superieure de Geologie - GeoRessources
 2 Rue du Doyen Marcel Roubault - TSA 70605  
 54518 VANDOEUVRE-LES-NANCY  
 FRANCE  
-## How to cite RINGMesh
+# How to cite RINGMesh
 
 ```latex
 @article{Pellerin2017,
       title={RINGMesh: A programming library for developing mesh-based geomodeling applications},
-              author={Pellerin, Jeanne and Botella, Arnaud and Bonneau, Fran{\c{c}}ois and
+      author={Pellerin, Jeanne and Botella, Arnaud and Bonneau, Fran{\c{c}}ois and
               Mazuyer, Antoine and Chauvin, Benjamin and L{\'e}vy, Bruno and Caumon, Guillaume},
       journal={Computers \& Geosciences},
       volume={104},
