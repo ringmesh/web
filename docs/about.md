@@ -1,11 +1,3 @@
----
-layout: page
-title: About
-permalink: /about/
-menu: main
-order: 5
----
-
 # Developers
 
 ## Current Developers
