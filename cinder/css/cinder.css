@@ -103,22 +103,3 @@ a:focus {
     color: #fff;
     background-color: #3083a1ff;
 }
-
-/*! Navigation bar style */
-.navbar {
-   min-height: 90px;
-   font-size: 20px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.navbar-brand {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    float: left;
-    padding: 30px 30px;
-    font-size: 19px;
-    line-height: 21px;
-}
