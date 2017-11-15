@@ -1,11 +1,3 @@
----
-layout: page
-title: Installation
-permalink: /installation/
-menu: main
-order: 1
----
-
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
 You will need CMake (version >= 3.1). There is no other dependency (everything
 you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.
@@ -15,6 +7,12 @@ Make sure that Git binary directory is in your computer path (environment variab
 Under Windows, after installing Git you should have in your path environment variable:
 C:\Program Files\Git\cmd.
 Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.
+
+You can clone RINGMesh using:
+
+```
+git clone https://github.com/ringmesh/RINGMesh/
+```
 
 # Linux
 
