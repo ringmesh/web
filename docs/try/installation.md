@@ -1,11 +1,3 @@
----
-layout: page
-title: Installation
-permalink: /installation/
-menu: main
-order: 1
----
-
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
 You will need CMake (version >= 3.1). There is no other dependency (everything
 you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.
@@ -16,6 +8,12 @@ Under Windows, after installing Git you should have in your path environment var
 C:\Program Files\Git\cmd.
 Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.
 
+You can clone RINGMesh using:
+
+```
+git clone https://github.com/ringmesh/RINGMesh/
+```
+
 # Linux
 
 
@@ -23,62 +21,70 @@ Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.
 
 Execute cmake command in a RINGMesh/build directory.
 
-* mkdir build
-* cd build
-
+```bash
+mkdir build
+cd build
+```
 To configure using default options:
+```bash
+cmake ..
+```
+To define the options, use the cmake interface
 
-* cmake ..
-
-To define the options, use the cmake interface:
-
-* cmake-gui .. or ccmake ..
-
+```bash
+cmake-gui .. or ccmake ..
+```
 
 ## Compiling RINGMesh
 
 To compile you need the following packages (on Debian-based linux):
-* build-essential
-* libx11-dev
-* libxrandr-dev
-* libxinerama-dev
-* libxcursor-dev
-* freeglut3-dev
-* libxi-dev
+
+ * build-essential
+ * libx11-dev
+ * libxrandr-dev
+ * libxinerama-dev
+ * libxcursor-dev
+ * freeglut3-dev
+ * libxi-dev
 
 Note: you need gcc/g++ version higher or equal to 4.8 to compile RINGMesh.
 
 Then, to compile RINGMesh, go to RINGMesh root directory and:
 
-* cd build/ringmesh/Release
-* make [-j4]
-
-To build in debug, go to build/ringmesh/Debug instead.
-
-Note: if you get this error during geogram gfx compilation
-"No rule to make target '/usr/lib/x86_64-linux-gnu/libGL.so'"
-(occured for Ubuntu 17.04), do:
-* sudo rm /usr/lib/x86_64-linux-gnu/libGL.so
-* sudo ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
-
-Eclipse-cdt project is provided (.project and .cproject). You can import RINGMesh into
-Eclipse: File>Import...>General>Existing Projects into Workspace. Click on next, then
-select the root directory (RINGMesh directory) then click on Finish. There are two
-build configurations: release and debug. There is a target to clean and compile. There are
-also targets to build/rebuild geogram.
+```bash
+cd build/Release
+make
+```
+To build in debug, go to build/Debug instead.
 
 ## Compiling the documentation
 
-* Check the BUILD_DOCUMENTATION option when using cmake
- * cd build
- * ccmake ..
- * set BUILD_DOCUMENTATION option to ON
- * configure and generate
-* cd build/ringmesh/Release
-* make doc-devkit OR make doc-devkit-lite
+To be able to compile the documentation, you have to set the cmake flag `BUILD_DOCUMENTATION`
+to on when configuring the project:
 
-You can also build the documentation through eclipse (see available targets).
-See the documentation section for more details.
+```bash
+cd build
+cmake .. -DBUILD_DOCUMENTATION:bool=on
+cd build Release
+make doc-devkit
+```
+## Troubleshooting
+
+If you get this error during geogram gfx compilation (occured for Ubuntu 17.04):
+```
+No rule to make target '/usr/lib/x86_64-linux-gnu/libGL.so'
+```
+you can try under root:
+```bash
+rm /usr/lib/x86_64-linux-gnu/libGL.so
+ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
+```
+## Additionnal information
+
+### Eclipse-cdt project
+[Eclipse-cdt](http://www.eclipse.org/cdt/)
+project is provided (.project and .cproject). You can import RINGMesh into
+Eclipse: File>Import...>General>Existing Projects into Workspace.
 
 # Windows
 
@@ -102,9 +108,11 @@ Make sure that you have installed C++ package for VisualStudio through the Visua
 You can either launch building in VisualStudio or calling cmake in command line
 in the build directory created at the configuration step:
 
-* cmake --build . --config Release
-* cmake --build . --config Debug
-* cmake --build . --config RelWithDebInfo
+```
+cmake --build . --config Release
+cmake --build . --config Debug
+cmake --build . --config RelWithDebInfo
+```
 
 The available compilation modes are:
 
@@ -146,7 +154,8 @@ You need to install Xcode IDE.
 Open the build/ringmesh/RINGMesh.xcodeproj with Xcode IDE,
 and then compile (as in Windows with VisualStudio).
 Or use these command lines:
-* cd build/ringmesh
-* xcodebuild -project RINGMesh.xcodeproj -alltargets -configuration Release
-
+```
+cd build/ringmesh
+xcodebuild -project RINGMesh.xcodeproj -alltargets -configuration Release
+```
 To build in Debug, replace "Release" by "Debug" after "-configuration".
