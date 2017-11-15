@@ -65,7 +65,7 @@ FRANCE
 ```latex
 @article{Pellerin2017,
       title={RINGMesh: A programming library for developing mesh-based geomodeling applications},
-              author={Pellerin, Jeanne and Botella, Arnaud and Bonneau, Fran{\c{c}}ois and
+      author={Pellerin, Jeanne and Botella, Arnaud and Bonneau, Fran{\c{c}}ois and
               Mazuyer, Antoine and Chauvin, Benjamin and L{\'e}vy, Bruno and Caumon, Guillaume},
       journal={Computers \& Geosciences},
       volume={104},
