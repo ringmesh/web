@@ -15,15 +15,16 @@ pages:
         - 'Installation': try/installation.md
         - 'Doxygen documentation': try/documentation.md
         - 'Tutorials': try/tutorials.md
+             - '_geomodel-basics': try/tutorials/geomodel/gemodel-basics.md
     - Features:
-        - 'The GeoModel object': features/geomodel.md
+        - 'GeoModel': features/geomodel.md
+        - 'Mesh': features/mesh.md
         - 'Supported file formats': features/file_formats.md
-        - 'Mesh Handling': features/mesh_handling.md
         - 'Viewer': features/viewer.md
     - Gallery: gallery.md
     - Download: download.md
     - About: about.md
 
 include_next_prev: false  # turn off next/previous buttons
-theme_dir: cinder
+#theme_dir: cinder
 

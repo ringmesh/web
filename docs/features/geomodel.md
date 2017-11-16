@@ -1,82 +1,90 @@
-The key object of RINGMesh is the GeoModel that represents a geological model.
+# GeoModel: Mutable object composition to represent Geological Model
 
-# Constitutive elements
-
-A model is defined by its constitutive elements (RINGMesh::GeoModelEntity) that can
-be derived into several classes:
-* The base entities (RINGMesh::GeoModelMeshEntity). They define the geometry of the model
-  * Regions 3D  
-  * Surfaces 2D
-  *  Lines 1D
-  * Corners 0D 
-
-* The geological entities (RINGMesh::GeoModelGeologicalEntity). They are groups of
-  base entities according to their geological meaning.
-  * Layers 
-  * Interfaces
-  * Contacts
-    
-* The RINGMesh::Universe that bounds the volume of interest.
-
-\image html geomodel_elements.svg 
-\image html ringmesh_uml.png
-
-The RINGMesh::GeoModelEntity stores the basic required information to identify an element
-of the RINGMesh::GeoModel: 
-* The RINGMesh::GeoModel owning the element.
-* The index and type of the element.
-* A name.
-* A geological feature (fault, horizon...).
-* ...
-
-# The Geometrical Entities: RINGMesh::GeoModelMeshEntity
-
-A RINGMesh::GeoModelMeshEntity is an abstract class 
-of the RINGMesh::GeoModelEntity. It stores a RINGMesh::Mesh to support the
-Geometry of:
-* RINGMesh::Region 
-* RINGMesh::Surface
-* RINGMesh::Line
-* RINGMesh::Corner
-
-The low level classes implement methods to operate on meshes according to their dimension.
-
-# The Geological Entities: RINGMesh::GeoModelGeologicalEntity
-
-A RINGMesh::GeoModelGeologicalEntity is an abstract class 
-of the RINGMesh::GeoModelEntity. It stores the connectivity between RINGMesh::GeoModelMeshEntity
-to provide a geological meaning to geometrical entities. It uses a kind of parent/child
-implementation.
-Built-in RINGMesh::GeoModelGeologicalEntity (sub-classes) in RINGMesh are:
-* RINGMesh::Contact. It is the parent of several RINGMesh::Line (children).
-  A RINGMesh::Contact represents
-  a geological contact, i.e. the intersections between two
-  RINGMesh::Interface (intersection between two
-  faults or between a fault and a horizon for instance).
-* RINGMesh::Interface. It is the parent of several RINGMesh::Surface (children).
-  A RINGMesh::Interface represents a 2D geological objects such as a fault or a horizon.
-* RINGMesh::Layer. It is the parent of several RINGMesh::Region (children). It represents
-  a geological layer.
-
-It is possible to define other kinds of RINGMesh::GeoModelGeologicalEntity
-by deriving RINGMesh::GeoModelGeologicalEntity.
+The key feature of RINGMesh is the `RINGMesh::GeoModel`. It aims at representing a geological model 
+with a level of complexity adapted to the prolem to solve. Geological objects are complex and 
+multiscale.
  
-# RINGMesh::GeoModelMesh : a global mesh representation of the GeoModel
+ * The first way to represent and discretize a high level of detail is to use a mesh composition 
+of Entities called `RINGMesh::GeoModelEntities`. In this cas, the `RINGMesh::GeoModel` defines the
+boundary representation of major geological objects holding the discretization and connectivity 
+between Entities.
+ * The second way to deal with the geological model is to consisder the global geometry through a 
+single mesh. The `RINGMesh::GeoModel` have tha ability to build a `RINGMesh::GeoModelMesh` on the fly.
+In this object, every nodes, edges, polygones and cells can be assessed though 
+a global index. It also enable a duplication of nodes along surfaces. This is usefull
+to feed some physical simulator and export several data structure format.
+
+## GeoModel Constitutive Elements: GeoModelEntity
+
+A model is defined by its constitutive elements `RINGMesh::GeoModelEntity`. 
+There is two main king of entities:
+
+ * Geometrical entities that define the geometry of the model throught several dimensions:
+     * Regions 
+     * Surfaces
+     * Lines
+     * Corners
+ * Geological entities that group several geometrical entities according to their geological meaning:
+    * Layers 
+    * Interfaces
+    * Contacts
+
+![alt text](images/geomodel_elements.svg)
+
+We know that this is not an exhautive list. A lot of entities would be valuable to complete the model. 
+We strongly encourage people to contribute and complete these lists :)	
+
+### GeoModel Geometrical Entities: GeoModelMeshEntity
+
+A set of `RINGMesh::GeoModelMeshEntity` hold the discretization and the boundary representation of the 
+geological model. Each mesh entity knows all connected higher and lower dimension mesh entities. Even if
+the topology between Entities is known, each `RINGMesh::GeoModelMeshEntity` store its own mesh data 
+structure independently from one to another and you can't get any global information. Geometrical 
+information is contained by an abstract mesh class implemented in RINGMesh. This abstraction level is 
+a strength of RINGMesh because it can be adapted to any data structure and ease the coupling between 
+software ([more details about meshes](./../../features/mesh)).
+
+ * A `RINGMesh::Region` is a volume defined by a set of `RingMesh::Surface` creating a closed "box". 
+Every surfaces that bound a region can be accessed by its index. A region can be meshed with cells.
+ * A `RINGMesh::Surface` is defined by a set of `RINGMesh::Line` creating a closed curve. It defines 
+one border of a `RINGMesh::Region`. Neighboring lines and surfaces can be accessed by their indices.
+ * A `RINGMesh::Line` is defined by two `RINGMesh::corner`. Connected corner and surfaces can be 
+accessed by their indices.
+ * A `RINGMesh::Corner` is a single node that bound `RingMesh::Line`. Connected lines can be 
+accessed by their indices.
+
+### GeoModel Geological Entities: GeoModelGeologicalEntity
+
+A `RINGMesh::GeoModelGeologicalEntity` store a geological based topological structure. It use a kind
+of parent/child implementation where `RINGMesh::GeoModelGeologicalEntity` is the parent of its children
+`RINGMesh::GeoModelMeshEntity`. The main idea is to cluster several geometrical entity that composed a 
+geological object.
+
+ * `RINGMesh::Layer` is composed by several RINGMesh::Region. A layer is the parent of several children 
+ regions. It represents a geological layer.
+ * `RINGMesh::Interface` is composed by several RINGMesh::Surface. An interface is tha parent of several
+ children surfaces. It represents a geological objects such as faults or horizons.
+ * A `RINGMesh::Contact` (parent) is composed by several RINGMesh::Line (children). It corresponds to the
+ intersections between two `RINGMesh::Interface`.
  
-The GeoModelMesh is one mesh built from copying and merging the RINGMesh::GeoModelMeshEntity.
-\link ringmesh_geomodel_mesh Description of the GeoModelMesh \endlink
+## GeoModel Global Representation: GeoModelMesh
  
+The GeoModelMesh is one mesh built by copying and merging all `RINGMesh::GeoModelMeshEntity` of the GeoModel 
+in a global and unique mesh. It allows to access to (1) a more general information than the one stores inside 
+mesh of `RINGMesh::GeoModelEntity`, and (2) a single mesh representing the entire geological model.
+
+To ease the global access to vertices, edges, facets and cells without redundancy at GeoModel geometrical
+entity borders; four databases are available. These databases are empty by default and are automatically 
+filled as soon as they are used.
+
+ * The `RINGMesh::GeoModelMeshVertices` 
+ * The `RINGMesh::GeoModelMeshEdges` this particular database is usfull to represent wells.
+ * The `RINGMesh::GeoModelMeshFacets` 
+ * The `RINGMesh::GeoModelMeshCells` gives a global access to any cell and its adjacent cells. At the mesh
+interfaces cells can be either connected or disconnected. Several disconnection mode are available according
+to geologic feature.
+    * No Duplication
+	* Duplication along faults only
+	* Duplication along horizons only
+	* Duplication along faults and horizons
  
-#Building a GeoModel
- 
-The class RINGMesh::GeoModelBuilder implements functions to 
-build and modify the elements of a RINGMesh::GeoModel.
-Any new builder should derive from this class.
-Three main builders are implemented:
-* RINGMesh::GeoModelBuilderGM to load RINGMesh geological model format
-  (boundary representation or 3D meshed models).
-* RINGMesh::GeoModelBuilderGocad to load either:
-  * A SKUA-GOCAD structural model saved in a .ml (RINGMesh::GeoModelBuilderML) file.
-  * A volumetric model saved in a .so (RINGMesh::GeoModelBuilderTSolid) file.
-* RINGMesh::GeoModelBuilderSurfaceMesh and RINGMesh::GeoModelBuilderMesh to build a
-RINGMesh::GeoModel from a RINGMesh::Mesh.
