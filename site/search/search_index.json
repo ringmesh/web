@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Highlights\n\n\n\n\nEfficient data structure to handle geological models\n\n\nAbstract mesh classes to represent the geological model entities\n\n\nResponsive API to use meshes in physical simulators\n\n\nLightweight geological model viewer\n\n\nUtilities to convert geological models into different file format\n\n\n\n\nMore details available in the features section.\n\n\n\n\n\n\nDownload\n\n\n\n\nRINGMesh_v5.0.0.zip\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nNews\n\n\n\n\n\n\n\n\nDate\n\n\nMessage\n\n\n\n\n\n\n\n\n\n\nNov 20, 2017\n\n\nNew RINGMesh website !", 
+            "text": "Highlights\n\n\n\n\nEfficient data structure to handle geological models\n\n\nAbstract mesh classes to represent the geological model entities\n\n\nResponsive API to use meshes in physical simulators\n\n\nLightweight geological model viewer\n\n\nUtilities to convert geological models into different file format\n\n\n\n\nMore details available in the features section.\n\n\n\n\n\n\nDownload\n\n\n\n\nLatest Release\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nNews\n\n\n\n\n\n\n\n\nDate\n\n\nMessage\n\n\n\n\n\n\n\n\n\n\nNov 20, 2017\n\n\nNew RINGMesh website !", 
             "title": "_Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#download", 
-            "text": "RINGMesh_v5.0.0.zip   For older releases see the  download  section.", 
+            "text": "Latest Release   For older releases see the  download  section.", 
             "title": "Download"
         }, 
         {
@@ -237,13 +237,23 @@
         }, 
         {
             "location": "/download/", 
-            "text": "Under construction", 
+            "text": "Download\n\n\nCurent Release\n\n\n\n\nLatest Release (09/06/2017)\n\n\n\n\nOlder Release\n\n\n\n\n\n\n\n\nVersion\n\n\nRelease Date\n\n\n\n\n\n\n\n\n\n\n4.1.0\n\n\n07/05/2017\n\n\n\n\n\n\n4.0.0\n\n\n03/14/2017\n\n\n\n\n\n\n2.0.0\n\n\n01/20/2016\n\n\n\n\n\n\n1.1.15-rc\n\n\n06/11/2015\n\n\n\n\n\n\n1.1.15-beta\n\n\n05/27/2015", 
             "title": "Download"
         }, 
         {
-            "location": "/download/#under-construction", 
+            "location": "/download/#download", 
             "text": "", 
-            "title": "Under construction"
+            "title": "Download"
+        }, 
+        {
+            "location": "/download/#curent-release", 
+            "text": "Latest Release (09/06/2017)", 
+            "title": "Curent Release"
+        }, 
+        {
+            "location": "/download/#older-release", 
+            "text": "Version  Release Date      4.1.0  07/05/2017    4.0.0  03/14/2017    2.0.0  01/20/2016    1.1.15-rc  06/11/2015    1.1.15-beta  05/27/2015", 
+            "title": "Older Release"
         }, 
         {
             "location": "/about/", 

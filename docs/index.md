@@ -13,8 +13,8 @@ More details available in the features section.
 <div class="col-md-6" news-table markdown="1">
 ## Download
 [<button type="button" class="btn btn-success">
-**RINGMesh_v5.0.0.zip**
-</button>]()
+**Latest Release**
+</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
 
 For older releases see the [download](download.md) section.
 ## News
