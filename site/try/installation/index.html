@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+      <title>RINGMesh</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../ringmesh.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">RINGMesh</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Try ! <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../try_online/">Try online</a>
+</li>
+                            
+                            
+                                
+<li class="active">
+    <a href="./">Installation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../documentation/">Doxygen documentation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../tutorials/">Tutorials</a>
+</li>
+                            
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../../features/geomodel/">GeoModel</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/mesh/">Mesh</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/file_formats/">Supported file formats</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/viewer/">Viewer</a>
+</li>
+                            
+                        </ul>
+                    </li>
+                    
+                        <li >
+                            <a href="../../gallery/">Gallery</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../download/">Download</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../about/">About</a>
+                        </li>
+                    
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/ringmesh/ringmesh/">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#configuration-and-compilation">Configuration and compilation</a></li>
+            <li><a href="#linux">Linux</a></li>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#mac-os">Mac OS</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="configuration-and-compilation">Configuration and compilation</h1>
+<p>RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
+You will need CMake (version &gt;= 3.1). There is no other dependency (everything
+you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.</p>
+<p>To clone RINGMesh you need Git (https://git-scm.com/).
+Make sure that Git binary directory is in your computer path (environment variable).
+Under Windows, after installing Git you should have in your path environment variable:
+C:\Program Files\Git\cmd.
+Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.</p>
+<p>You can clone RINGMesh using:</p>
+<pre><code>git clone https://github.com/ringmesh/RINGMesh/
+</code></pre>
+
+<h2 id="linux">Linux</h2>
+<h3 id="configuring-ringmesh">Configuring RINGMesh</h3>
+<p>Execute cmake command in a RINGMesh/build directory.</p>
+<pre><code class="bash">mkdir build
+cd build
+</code></pre>
+
+<p>To configure using default options:</p>
+<pre><code class="bash">cmake ..
+</code></pre>
+
+<p>To define the options, use the cmake interface</p>
+<pre><code class="bash">cmake-gui .. or ccmake ..
+</code></pre>
+
+<h3 id="compiling-ringmesh">Compiling RINGMesh</h3>
+<p>To compile you need the following packages (on Debian-based linux):</p>
+<ul>
+<li>build-essential</li>
+<li>libx11-dev</li>
+<li>libxrandr-dev</li>
+<li>libxinerama-dev</li>
+<li>libxcursor-dev</li>
+<li>freeglut3-dev</li>
+<li>libxi-dev</li>
+</ul>
+<p>Note: you need gcc/g++ version higher or equal to 4.8 to compile RINGMesh.</p>
+<p>Then, to compile RINGMesh, go to RINGMesh root directory and:</p>
+<pre><code class="bash">cd build/Release
+make
+</code></pre>
+
+<p>To build in debug, go to build/Debug instead.</p>
+<h3 id="compiling-the-documentation">Compiling the documentation</h3>
+<p>To be able to compile the documentation, you have to set the cmake flag <code>BUILD_DOCUMENTATION</code>
+to on when configuring the project:</p>
+<pre><code class="bash">cd build
+cmake .. -DBUILD_DOCUMENTATION:bool=on
+cd build Release
+make doc-devkit
+</code></pre>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If you get this error during geogram gfx compilation (occured for Ubuntu 17.04):</p>
+<pre><code>No rule to make target '/usr/lib/x86_64-linux-gnu/libGL.so'
+</code></pre>
+
+<p>you can try under root:</p>
+<pre><code class="bash">rm /usr/lib/x86_64-linux-gnu/libGL.so
+ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
+</code></pre>
+
+<h3 id="additionnal-information">Additionnal information</h3>
+<h4 id="eclipse-cdt-project">Eclipse-cdt project</h4>
+<p><a href="http://www.eclipse.org/cdt/">Eclipse-cdt</a>
+project is provided (.project and .cproject). You can import RINGMesh into
+Eclipse: File&gt;Import...&gt;General&gt;Existing Projects into Workspace.</p>
+<h2 id="windows">Windows</h2>
+<h3 id="configuring-ringmesh_1">Configuring RINGMesh</h3>
+<p>Launch CMake GUI, indicate where is the source code as the path to RINGMesh root and
+where to put the binaries as this_root/build/ringmesh.
+Configuration options can be set in using the interface.</p>
+<p>RINGMesh has previously been compiled with:</p>
+<ul>
+<li>Visual Studio 10 2010 Win64</li>
+<li>Visual Studio 11 2012 Win64</li>
+<li>Visual Studio 12 2013 Win64</li>
+<li>Visual Studio 14 2015 Win64</li>
+<li>Visual Studio 15 2017 Win64</li>
+</ul>
+<h3 id="compiling-ringmesh_1">Compiling RINGMesh</h3>
+<p>Make sure that you have installed C++ package for VisualStudio through the VisualStudio installer.
+You can either launch building in VisualStudio or calling cmake in command line
+in the build directory created at the configuration step:</p>
+<pre><code>cmake --build . --config Release
+cmake --build . --config Debug
+cmake --build . --config RelWithDebInfo
+</code></pre>
+
+<p>The available compilation modes are:</p>
+<ul>
+<li>Release</li>
+<li>Debug</li>
+<li>RelWithDebInfo (mandatory to debug a Gocad plugin in Debug mode with a Gocad
+  in Release, there are issues between libraries in Debug linked to a Gocad plugin)</li>
+</ul>
+<h3 id="compiling-the-documentation_1">Compiling the documentation</h3>
+<ul>
+<li>Check the BUILD_DOCUMENTATION option when using cmake</li>
+<li>Open the solution which is in build/ringmesh/RINGmesh.sln in VisualStudio</li>
+<li>Build the doc-devkit or the doc-devkit-lite project</li>
+</ul>
+<p>See the documentation section for more details.</p>
+<h2 id="mac-os">Mac OS</h2>
+<h3 id="configuring-ringmesh_2">Configuring RINGMesh</h3>
+<h4 id="using-clang-without-xcode">Using clang (without Xcode)</h4>
+<p>As in Linux.</p>
+<h4 id="using-xcode-ide">Using Xcode IDE</h4>
+<p>As in Windows but with the Xcode generator
+(use "-G Xcode" if you use cmake in command lines).</p>
+<h3 id="compiling-ringmesh_2">Compiling RINGMesh</h3>
+<p>You need to install the Mac OS "Command Line Developer Tools".</p>
+<p>Note: you need gcc/g++ version higher or equal to 4.2 to compile RINGMesh.
+In Mac OS, clang is used.</p>
+<h4 id="using-clang-without-xcode_1">Using clang (without Xcode)</h4>
+<p>As in Linux except for the packages.</p>
+<h4 id="using-xcode-ide_1">Using Xcode IDE</h4>
+<p>You need to install Xcode IDE.
+Open the build/ringmesh/RINGMesh.xcodeproj with Xcode IDE,
+and then compile (as in Windows with VisualStudio).
+Or use these command lines:</p>
+<pre><code>cd build/ringmesh
+xcodebuild -project RINGMesh.xcodeproj -alltargets -configuration Release
+</code></pre>
+
+<p>To build in Debug, replace "Release" by "Debug" after "-configuration".</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

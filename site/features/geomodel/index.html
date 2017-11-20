@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+      <title>RINGMesh</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../ringmesh.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">RINGMesh</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Try ! <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../../try/try_online/">Try online</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../try/installation/">Installation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../try/documentation/">Doxygen documentation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../try/tutorials/">Tutorials</a>
+</li>
+                            
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li class="active">
+    <a href="./">GeoModel</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../mesh/">Mesh</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../file_formats/">Supported file formats</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../viewer/">Viewer</a>
+</li>
+                            
+                        </ul>
+                    </li>
+                    
+                        <li >
+                            <a href="../../gallery/">Gallery</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../download/">Download</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../about/">About</a>
+                        </li>
+                    
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/ringmesh/ringmesh/">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#geomodel-mutable-object-composition-to-represent-geological-model">GeoModel: Mutable object composition to represent Geological Model</a></li>
+            <li><a href="#geomodel-constitutive-elements-geomodelentity">GeoModel Constitutive Elements: GeoModelEntity</a></li>
+            <li><a href="#geomodel-global-representation-geomodelmesh">GeoModel Global Representation: GeoModelMesh</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="geomodel-mutable-object-composition-to-represent-geological-model">GeoModel: Mutable object composition to represent Geological Model</h1>
+<p>The key feature of RINGMesh is the <code>RINGMesh::GeoModel</code>. It aims at representing a geological model 
+with a level of complexity adapted to the prolem to solve. Geological objects are complex and 
+multiscale.</p>
+<ul>
+<li>The first way to represent and discretize a high level of detail is to use a mesh composition 
+of Entities called <code>RINGMesh::GeoModelEntities</code>. In this cas, the <code>RINGMesh::GeoModel</code> defines the
+boundary representation of major geological objects holding the discretization and connectivity 
+between Entities.</li>
+<li>The second way to deal with the geological model is to consisder the global geometry through a 
+single mesh. The <code>RINGMesh::GeoModel</code> have tha ability to build a <code>RINGMesh::GeoModelMesh</code> on the fly.
+In this object, every nodes, edges, polygones and cells can be assessed though 
+a global index. It also enable a duplication of nodes along surfaces. This is usefull
+to feed some physical simulator and export several data structure format.</li>
+</ul>
+<h2 id="geomodel-constitutive-elements-geomodelentity">GeoModel Constitutive Elements: GeoModelEntity</h2>
+<p>A model is defined by its constitutive elements <code>RINGMesh::GeoModelEntity</code>. 
+There is two main king of entities:</p>
+<ul>
+<li>Geometrical entities that define the geometry of the model throught several dimensions:<ul>
+<li>Regions </li>
+<li>Surfaces</li>
+<li>Lines</li>
+<li>Corners</li>
+</ul>
+</li>
+<li>Geological entities that group several geometrical entities according to their geological meaning:<ul>
+<li>Layers </li>
+<li>Interfaces</li>
+<li>Contacts</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../images/geomodel_elements.svg" /></p>
+<p>We know that this is not an exhautive list. A lot of entities would be valuable to complete the model. 
+We strongly encourage people to contribute and complete these lists :)  </p>
+<h3 id="geomodel-geometrical-entities-geomodelmeshentity">GeoModel Geometrical Entities: GeoModelMeshEntity</h3>
+<p>A set of <code>RINGMesh::GeoModelMeshEntity</code> hold the discretization and the boundary representation of the 
+geological model. Each mesh entity knows all connected higher and lower dimension mesh entities. Even if
+the topology between Entities is known, each <code>RINGMesh::GeoModelMeshEntity</code> store its own mesh data 
+structure independently from one to another and you can't get any global information. Geometrical 
+information is contained by an abstract mesh class implemented in RINGMesh. This abstraction level is 
+a strength of RINGMesh because it can be adapted to any data structure and ease the coupling between 
+software (<a href="../../../features/mesh">more details about meshes</a>).</p>
+<ul>
+<li>A <code>RINGMesh::Region</code> is a volume defined by a set of <code>RingMesh::Surface</code> creating a closed "box". 
+Every surfaces that bound a region can be accessed by its index. A region can be meshed with cells.</li>
+<li>A <code>RINGMesh::Surface</code> is defined by a set of <code>RINGMesh::Line</code> creating a closed curve. It defines 
+one border of a <code>RINGMesh::Region</code>. Neighboring lines and surfaces can be accessed by their indices.</li>
+<li>A <code>RINGMesh::Line</code> is defined by two <code>RINGMesh::corner</code>. Connected corner and surfaces can be 
+accessed by their indices.</li>
+<li>A <code>RINGMesh::Corner</code> is a single node that bound <code>RingMesh::Line</code>. Connected lines can be 
+accessed by their indices.</li>
+</ul>
+<h3 id="geomodel-geological-entities-geomodelgeologicalentity">GeoModel Geological Entities: GeoModelGeologicalEntity</h3>
+<p>A <code>RINGMesh::GeoModelGeologicalEntity</code> store a geological based topological structure. It use a kind
+of parent/child implementation where <code>RINGMesh::GeoModelGeologicalEntity</code> is the parent of its children
+<code>RINGMesh::GeoModelMeshEntity</code>. The main idea is to cluster several geometrical entity that composed a 
+geological object.</p>
+<ul>
+<li><code>RINGMesh::Layer</code> is composed by several RINGMesh::Region. A layer is the parent of several children 
+ regions. It represents a geological layer.</li>
+<li><code>RINGMesh::Interface</code> is composed by several RINGMesh::Surface. An interface is tha parent of several
+ children surfaces. It represents a geological objects such as faults or horizons.</li>
+<li>A <code>RINGMesh::Contact</code> (parent) is composed by several RINGMesh::Line (children). It corresponds to the
+ intersections between two <code>RINGMesh::Interface</code>.</li>
+</ul>
+<h2 id="geomodel-global-representation-geomodelmesh">GeoModel Global Representation: GeoModelMesh</h2>
+<p>The GeoModelMesh is one mesh built by copying and merging all <code>RINGMesh::GeoModelMeshEntity</code> of the GeoModel 
+in a global and unique mesh. It allows to access to (1) a more general information than the one stores inside 
+mesh of <code>RINGMesh::GeoModelEntity</code>, and (2) a single mesh representing the entire geological model.</p>
+<p>To ease the global access to vertices, edges, facets and cells without redundancy at GeoModel geometrical
+entity borders; four databases are available. These databases are empty by default and are automatically 
+filled as soon as they are used.</p>
+<ul>
+<li>The <code>RINGMesh::GeoModelMeshVertices</code> </li>
+<li>The <code>RINGMesh::GeoModelMeshEdges</code> this particular database is usfull to represent wells.</li>
+<li>The <code>RINGMesh::GeoModelMeshFacets</code> </li>
+<li>The <code>RINGMesh::GeoModelMeshCells</code> gives a global access to any cell and its adjacent cells. At the mesh
+interfaces cells can be either connected or disconnected. Several disconnection mode are available according
+to geologic feature.<ul>
+<li>No Duplication</li>
+<li>Duplication along faults only</li>
+<li>Duplication along horizons only</li>
+<li>Duplication along faults and horizons</li>
+</ul>
+</li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
