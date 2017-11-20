@@ -75,3 +75,8 @@ FRANCE
       url={https://ringmesh.ring-team.org}
         }
 ```
+
+# About the website
+
+This website has been built using [MkDocs](http://www.mkdocs.org/) and a modified
+[Bootswatch](https://bootswatch.com/) theme of the [Bootstrap](https://getbootstrap.com/) framework.
