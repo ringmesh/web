@@ -1,0 +1,79 @@
+/* Navbar options*/
+.navbar-default {
+    /* Color of the navbar*/
+    background-color: #3797b9ff;
+    border-color: #3083a1ff;
+    /*Font size of the menu*/
+    font-size: 19px;
+}
+
+/*! Color of menu when you put your mouse on*/
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+/*! Color of menu when the matching page is displayed */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+/*! Color of menu when the submenus are displayed */
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #fff;
+    background-color: #3083a1ff;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #3083a1ff;
+    text-decoration: none;
+    background-color: #f9f9f9;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: #3083a1ff;
+    text-decoration: none;
+    background-color: #f9f9f9;
+    outline: 0;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.col-md-6 {
+    font-size: 110%;
+}
+
+/* hide header in News, adjust spacing */
+div.news-table table > thead > tr > th {
+  display: none
+}
+div.news-table table > tbody > tr > td {
+  padding: 5px;
+}
+
+/* Color of the links*/
+a {
+    color: #3797b9ff;
+    text-decoration: none;
+}
+
+
+.btn {
+    background-color: #3a839cff;
+    border-color: #3a839cff;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #3083a1ff;
+    border-color: #3083a1ff;
+}
+
+/* Color of the links when the mouse is on*/
+a:hover, a:focus {
+    color: #246f89ff;
+    text-decoration: underline;
+}
