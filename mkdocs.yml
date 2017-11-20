@@ -9,7 +9,7 @@ repo_url: https://github.com/ringmesh/ringmesh
 remote_name: github
 
 pages:
-    - Home: index.md
+    - '_Home': index.md
     - 'Try !':
         - 'Try online': try/try_online.md
         - 'Installation': try/installation.md

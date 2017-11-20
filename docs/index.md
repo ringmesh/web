@@ -21,7 +21,5 @@ For older releases see the [download](download.md) section.
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Dec 15, 2017 | New publication using RINGMesh 
-Nov 30, 2017 | New RINGMesh website !
-Nov 11, 2017 | RINGMesh 5.0.0 is out
+Nov 20, 2017 | New RINGMesh website !
 </div>

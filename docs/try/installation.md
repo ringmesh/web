@@ -1,3 +1,5 @@
+# Configuration and compilation
+
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
 You will need CMake (version >= 3.1). There is no other dependency (everything
 you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.
@@ -14,10 +16,10 @@ You can clone RINGMesh using:
 git clone https://github.com/ringmesh/RINGMesh/
 ```
 
-# Linux
+## Linux
 
 
-## Configuring RINGMesh
+### Configuring RINGMesh
 
 Execute cmake command in a RINGMesh/build directory.
 
@@ -35,7 +37,7 @@ To define the options, use the cmake interface
 cmake-gui .. or ccmake ..
 ```
 
-## Compiling RINGMesh
+### Compiling RINGMesh
 
 To compile you need the following packages (on Debian-based linux):
 
@@ -57,7 +59,7 @@ make
 ```
 To build in debug, go to build/Debug instead.
 
-## Compiling the documentation
+### Compiling the documentation
 
 To be able to compile the documentation, you have to set the cmake flag `BUILD_DOCUMENTATION`
 to on when configuring the project:
@@ -68,7 +70,7 @@ cmake .. -DBUILD_DOCUMENTATION:bool=on
 cd build Release
 make doc-devkit
 ```
-## Troubleshooting
+### Troubleshooting
 
 If you get this error during geogram gfx compilation (occured for Ubuntu 17.04):
 ```
@@ -79,16 +81,16 @@ you can try under root:
 rm /usr/lib/x86_64-linux-gnu/libGL.so
 ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
 ```
-## Additionnal information
+### Additionnal information
 
-### Eclipse-cdt project
+#### Eclipse-cdt project
 [Eclipse-cdt](http://www.eclipse.org/cdt/)
 project is provided (.project and .cproject). You can import RINGMesh into
 Eclipse: File>Import...>General>Existing Projects into Workspace.
 
-# Windows
+## Windows
 
-## Configuring RINGMesh
+### Configuring RINGMesh
 
 Launch CMake GUI, indicate where is the source code as the path to RINGMesh root and
 where to put the binaries as this_root/build/ringmesh.
@@ -102,7 +104,7 @@ RINGMesh has previously been compiled with:
 * Visual Studio 14 2015 Win64
 * Visual Studio 15 2017 Win64
 
-## Compiling RINGMesh
+### Compiling RINGMesh
 
 Make sure that you have installed C++ package for VisualStudio through the VisualStudio installer.
 You can either launch building in VisualStudio or calling cmake in command line
@@ -121,7 +123,7 @@ The available compilation modes are:
 * RelWithDebInfo (mandatory to debug a Gocad plugin in Debug mode with a Gocad
   in Release, there are issues between libraries in Debug linked to a Gocad plugin)
 
-## Compiling the documentation
+### Compiling the documentation
 
 * Check the BUILD_DOCUMENTATION option when using cmake
 * Open the solution which is in build/ringmesh/RINGmesh.sln in VisualStudio
@@ -129,27 +131,27 @@ The available compilation modes are:
 
 See the documentation section for more details.
 
-# Mac OS
+## Mac OS
 
-## Configuring RINGMesh
+### Configuring RINGMesh
 
-## Using clang (without Xcode)
+#### Using clang (without Xcode)
 As in Linux.
 
-## Using Xcode IDE
+#### Using Xcode IDE
 As in Windows but with the Xcode generator
 (use "-G Xcode" if you use cmake in command lines).
 
-## Compiling RINGMesh
+### Compiling RINGMesh
 You need to install the Mac OS "Command Line Developer Tools".
 
 Note: you need gcc/g++ version higher or equal to 4.2 to compile RINGMesh.
 In Mac OS, clang is used.
 
-### Using clang (without Xcode)
+#### Using clang (without Xcode)
 As in Linux except for the packages.
 
-### Using Xcode IDE
+#### Using Xcode IDE
 You need to install Xcode IDE.
 Open the build/ringmesh/RINGMesh.xcodeproj with Xcode IDE,
 and then compile (as in Windows with VisualStudio).
