@@ -77,9 +77,11 @@ To ease the global access to vertices, edges, facets and cells without redundanc
 entity borders; four databases are available. These databases are empty by default and are automatically 
 filled as soon as they are used.
 
- * The `RINGMesh::GeoModelMeshVertices` 
- * The `RINGMesh::GeoModelMeshEdges` this particular database is useful to represent wells.
- * The `RINGMesh::GeoModelMeshPolygons` 
+ * The `RINGMesh::GeoModelMeshVertices` gives a global and unique access to any vertex of the GeoModel. 
+ * The `RINGMesh::GeoModelMeshEdges` gives a global and unique access to any edge and adjacent edges 
+ of each GeoModel contacts.
+ * The `RINGMesh::GeoModelMeshPolygons` gives a global and unique access to any polygon and adjacent polygons 
+ of each GeoModel interfaces.
  * The `RINGMesh::GeoModelMeshCells` gives a global access to any cell and its adjacent cells. At the mesh
 interfaces cells can be either connected or disconnected. Several disconnection mode are available according
 to geologic feature.
@@ -87,4 +89,5 @@ to geologic feature.
 	* Duplication along faults only
 	* Duplication along horizons only
 	* Duplication along faults and horizons
- 
+ * The `RINGMesh::GeoModelMeshWells` is a particular database to ease the iteration on wells geometry. It provides
+ a global and unique access to any edge and adjacent edges of wells. 
