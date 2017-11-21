@@ -1,5 +1,6 @@
 site_name: RINGMesh
 docs_dir: 'docs'
+site_description: 'RINGMesh is a C++ open-source programming library for manipulating meshes of geological models.'
 
 markdown_extensions:
     - extra  # allow markdown in <div markdown="1">
