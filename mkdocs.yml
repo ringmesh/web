@@ -25,7 +25,6 @@ pages:
     - Download: download.md
     - About: about.md
 
-include_next_prev: false  # turn off next/previous buttons
 theme:
     name: null
     custom_dir: bootswatch_flatly
