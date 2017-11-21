@@ -39,7 +39,6 @@
 }
 
 img {
-    max-height: 100%;
     max-width: 100%;
 }
 
@@ -49,10 +48,10 @@ img {
 
 /* hide header in News, adjust spacing */
 div.news-table table > thead > tr > th {
-  display: none
+    display: none
 }
 div.news-table table > tbody > tr > td {
-  padding: 5px;
+    padding: 5px;
 }
 
 /* Color of the links*/
@@ -70,6 +69,18 @@ a {
     color: #fff;
     background-color: #3083a1ff;
     border-color: #3083a1ff;
+}
+
+.logo_users {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.logo_users img {
+    height: 75px;
+	max-height: 100%;
+	width: auto;
 }
 
 /* Color of the links when the mouse is on*/
