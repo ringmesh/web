@@ -12,7 +12,7 @@ between Entities.
 single mesh. The `RINGMesh::GeoModel` have that ability to build a `RINGMesh::GeoModelMesh` on the fly.
 In this object, every nodes, edges, polygons and cells can be assessed though 
 a global index. It also enable a duplication of nodes along surfaces. This is useful
-to feed some physical simulator and export several data structure format.
+to feed some physical simulator and exports several data structure formats.
 
 ## GeoModel Constitutive Elements: GeoModelEntity
 
