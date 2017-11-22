@@ -1,6 +1,6 @@
-# Download
+# Download sources
 
-## Curent Release
+## Current Release
 
 [<button type="button" class="btn btn-success">
 **Latest Release (09/06/2017)**
