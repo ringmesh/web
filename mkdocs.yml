@@ -27,6 +27,4 @@ pages:
 
 theme:
     name: null
-    custom_dir: bootswatch_flatly
-
-extra_css: [ringmesh.css]
+    custom_dir: ringmesh_theme
