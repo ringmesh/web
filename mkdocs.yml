@@ -1,12 +1,13 @@
 site_name: RINGMesh
 docs_dir: 'docs'
+site_description: 'RINGMesh is a C++ open-source programming library for manipulating meshes of geological models.'
 
 markdown_extensions:
     - extra  # allow markdown in <div markdown="1">
     - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
 
 repo_url: https://github.com/ringmesh/ringmesh
-remote_name: github
+remote_name: origin
 
 pages:
     - '_Home': index.md
@@ -25,9 +26,6 @@ pages:
     - Download: download.md
     - About: about.md
 
-include_next_prev: false  # turn off next/previous buttons
 theme:
     name: null
-    custom_dir: bootswatch_flatly
-
-extra_css: [ringmesh.css]
+    custom_dir: ringmesh_theme
