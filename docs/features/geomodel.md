@@ -5,14 +5,14 @@ with a level of complexity adapted to the prolem to solve. Geological objects ar
 multiscale.
  
  * The first way to represent and discretize a high level of detail is to use a mesh composition 
-of Entities called `RINGMesh::GeoModelEntities`. In this cas, the `RINGMesh::GeoModel` defines the
+of Entities called `RINGMesh::GeoModelEntities`. In this case, the `RINGMesh::GeoModel` defines the
 boundary representation of major geological objects holding the discretization and connectivity 
 between Entities.
  * The second way to deal with the geological model is to consisder the global geometry through a 
 single mesh. The `RINGMesh::GeoModel` have tha ability to build a `RINGMesh::GeoModelMesh` on the fly.
 In this object, every nodes, edges, polygones and cells can be assessed though 
 a global index. It also enable a duplication of nodes along surfaces. This is usefull
-to feed some physical simulator and export several data structure format.
+to feed some physical simulators and export several data structure formats.
 
 ## GeoModel Constitutive Elements: GeoModelEntity
 
