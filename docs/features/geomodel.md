@@ -1,17 +1,17 @@
 # GeoModel: Mutable object composition to represent Geological Model
 
 The key feature of RINGMesh is the `RINGMesh::GeoModel`. It aims at representing a geological model 
-with a level of complexity adapted to the prolem to solve. Geological objects are complex and 
+with a level of complexity adapted to the problem to solve. Geological objects are complex and 
 multiscale.
  
  * The first way to represent and discretize a high level of detail is to use a mesh composition 
 of Entities called `RINGMesh::GeoModelEntities`. In this case, the `RINGMesh::GeoModel` defines the
 boundary representation of major geological objects holding the discretization and connectivity 
 between Entities.
- * The second way to deal with the geological model is to consisder the global geometry through a 
-single mesh. The `RINGMesh::GeoModel` have tha ability to build a `RINGMesh::GeoModelMesh` on the fly.
-In this object, every nodes, edges, polygones and cells can be assessed though 
-a global index. It also enable a duplication of nodes along surfaces. This is usefull
+ * The second way to deal with the geological model is to consider the global geometry through a 
+single mesh. The `RINGMesh::GeoModel` have that ability to build a `RINGMesh::GeoModelMesh` on the fly.
+In this object, every nodes, edges, polygons and cells can be assessed though 
+a global index. It also enable a duplication of nodes along surfaces. This is useful
 to feed some physical simulators and export several data structure formats.
 
 ## GeoModel Constitutive Elements: GeoModelEntity
@@ -19,7 +19,7 @@ to feed some physical simulators and export several data structure formats.
 A model is defined by its constitutive elements `RINGMesh::GeoModelEntity`. 
 There is two main king of entities:
 
- * Geometrical entities that define the geometry of the model throught several dimensions:
+ * Geometrical entities that define the geometry of the model through several dimensions:
      * Regions 
      * Surfaces
      * Lines
@@ -31,7 +31,7 @@ There is two main king of entities:
 
 ![alt text](images/geomodel_elements.svg)
 
-We know that this is not an exhautive list. A lot of entities would be valuable to complete the model. 
+We know that this is not an complete list. A lot of entities would be valuable to complete the model. 
 We strongly encourage people to contribute and complete these lists :)	
 
 ### GeoModel Geometrical Entities: GeoModelMeshEntity
@@ -48,7 +48,7 @@ software ([more details about meshes](./../../features/mesh)).
 Every surfaces that bound a region can be accessed by its index. A region can be meshed with cells.
  * A `RINGMesh::Surface` is defined by a set of `RINGMesh::Line` creating a closed curve. It defines 
 one border of a `RINGMesh::Region`. Neighboring lines and surfaces can be accessed by their indices.
- * A `RINGMesh::Line` is defined by two `RINGMesh::corner`. Connected corner and surfaces can be 
+ * A `RINGMesh::Line` is defined by two `RINGMesh::Corner`. Connected corner and surfaces can be 
 accessed by their indices.
  * A `RINGMesh::Corner` is a single node that bound `RingMesh::Line`. Connected lines can be 
 accessed by their indices.
@@ -62,7 +62,7 @@ geological object.
 
  * `RINGMesh::Layer` is composed by several RINGMesh::Region. A layer is the parent of several children 
  regions. It represents a geological layer.
- * `RINGMesh::Interface` is composed by several RINGMesh::Surface. An interface is tha parent of several
+ * `RINGMesh::Interface` is composed by several RINGMesh::Surface. An interface is the parent of several
  children surfaces. It represents a geological objects such as faults or horizons.
  * A `RINGMesh::Contact` (parent) is composed by several RINGMesh::Line (children). It corresponds to the
  intersections between two `RINGMesh::Interface`.
@@ -77,9 +77,11 @@ To ease the global access to vertices, edges, facets and cells without redundanc
 entity borders; four databases are available. These databases are empty by default and are automatically 
 filled as soon as they are used.
 
- * The `RINGMesh::GeoModelMeshVertices` 
- * The `RINGMesh::GeoModelMeshEdges` this particular database is usfull to represent wells.
- * The `RINGMesh::GeoModelMeshFacets` 
+ * The `RINGMesh::GeoModelMeshVertices` gives a global and unique access to any vertex of the GeoModel. 
+ * The `RINGMesh::GeoModelMeshEdges` gives a global and unique access to any edge and adjacent edges 
+ of each GeoModel contacts.
+ * The `RINGMesh::GeoModelMeshPolygons` gives a global and unique access to any polygon and adjacent polygons 
+ of each GeoModel interfaces.
  * The `RINGMesh::GeoModelMeshCells` gives a global access to any cell and its adjacent cells. At the mesh
 interfaces cells can be either connected or disconnected. Several disconnection mode are available according
 to geologic feature.
@@ -87,4 +89,5 @@ to geologic feature.
 	* Duplication along faults only
 	* Duplication along horizons only
 	* Duplication along faults and horizons
- 
+ * The `RINGMesh::GeoModelMeshWells` is a particular database to ease the iteration on wells geometry. It provides
+ a global and unique access to any edge and adjacent edges of wells. 

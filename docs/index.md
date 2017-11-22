@@ -6,10 +6,10 @@
 
 ## Highlights
 * Efficient data structure to handle geological models
-* Abstract mesh classes to represent the geological model entities
+* Abstract mesh classes to represent the geometry of geological model entities
 * Responsive API to use meshes in physical simulators
 * Lightweight geological model viewer
-* Utilities to convert geological models into different file format
+* Utilities to convert geological models into another file format
 
 More details available in the features section.
 ## Download
