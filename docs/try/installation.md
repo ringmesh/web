@@ -51,9 +51,9 @@ To build in debug, go to build/Debug instead.
 
 Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to 4.8 to compile it.
 
-### Compiling the documentation
+### Generating the documentation
 
-If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration for running documentation build. You can generate the documentation with the following command:
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation using the following command:
 
 ```bash
 make doc-devkit
