@@ -1,22 +1,76 @@
 
-## How to build and use GeoModel
-### GeoModelBuilder
+## Basic functionalities on GeoModel
+The most efficient way to build a GeoModel is to import its geometry and topology from a
+geomodeler. This tutorial present a simple code to load manipulate and export GeoModel
+
+### GeoModel I/O
+
+GeoModel store the geometry and the topology of a geological model. It can be imported from boundary 
+representation or volumetric representation file format.
+RINGMesh use a factory design pattern to allow an easy implementation of various Input/Output management. 
+The file extention is the factory key. 
+The Input/Output file format currently supported by RINGMesh are listed [here](/features/file_formats).
+
+A GeoModel can be loaded and saved as follow:
+
+	 // GeoModel instantiation in 3D
+	 GeoModel3D geomodel ;
+	
+	 // LOADING
+	 //path to the file to load
+	 //the file extention is the factroy key.
+	 std::string input_file_name = "path/to/your_input_model.key";
+	 //static function to load a geomodel from input_file_name
+	 geomodel_load( geomodel, input_file_name ) ;
+	 
+	 //SAVING
+	 //path to the file to write
+	 //the file extention is the factroy key.
+	 std::string output_file_name = "path/to/your_output_model.key"; 
+	 geomodel_save(geomodel, output_file_name);
+
+When a GeoModel is loaded, its validity is automatically checked and resulting information 
+are printed in the consol terminal.
+
+####Try:
+
+ * Load the `ModelA1.ml` (a 3D model boundary representation from gocad) 
+ * Save it to the GINGMesh file format (.gm)`ModelA1.gm`.
+ * Open and analyse the .gm file [see description](/features/file_formats).
+
+### Basic Usage
+Once created several functions can be called to study/manipulate/repair the GeoModel:
+
+	print_geomodel_mesh_stats( geomodel ) ; //print the geomodel statistics in the command terminal
+	is_geomodel_valid( geomodel ) ; //investigate the validity of the geomodel
+	translate(geomodel, {0,0,100}) ; //translate geomodel along vertical axis
+	
+If RINGMesh is compilled with a meshing sofware:
  
-The `RINGMesh::GeoModelBuilder` implements functions to build and modify the elements of a `RINGMesh::GeoModel`.
-Any new builder should derive from this class.
-Three main builders are implemented:
+	tetgen_tetrahedralize_geomodel_regions( geomodel ) ; //build volumetric mesh in geomodel regions using TetGen [Si,2015] 
+	
+This is not an exaustive list of functionalities. Please look at the doxygen documentation.
 
- * RINGMesh::GeoModelBuilderGM to load RINGMesh geological model format
-  (boundary representation or 3D meshed models).
- * RINGMesh::GeoModelBuilderGocad to load either:
-    * A SKUA-GOCAD structural model saved in a .ml (RINGMesh::GeoModelBuilderML) file.
-    * A volumetric model saved in a .so (RINGMesh::GeoModelBuilderTSolid) file.
- * RINGMesh::GeoModelBuilderSurfaceMesh and RINGMesh::GeoModelBuilderMesh to build a
-RINGMesh::GeoModel from a RINGMesh::Mesh.
+Try:
 
-###GeoModelMesh: How to use the global iteration?
+ * Load the `ModelA1.ml` (a 3D model boundary representation from gocad) 
+ * print statistics on the imported geomodel
+ * mesh it with TetGen
+ * print statistics on the imported geomodel
+ * Save it to the GINGMesh file format (.gm) `ModelA1.gm`.
+ * Open and analyse the .gm file [see description](/features/file_formats).
+ 
+### Manipulate GeoModelEntities
 
-    // Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
+### Manipulate GeoModelMesh
+
+The GeoModelMesh is contain four data bases to provide a global and unique indexing of mesh component.
+This ease a global iteration through the GeoModel.
+
+	//Build GeoModelMesh
+	GeoModelMesh gmm(geomodel);
+	
+	// Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
     for( index_t v = 0; v < gmm.vertices.nb_vertices(); v++ ) {
         const vec3& point = gmm.vertices.vertex( v ) ;
     }
@@ -45,3 +99,4 @@ RINGMesh::GeoModel from a RINGMesh::Mesh.
             } 
         }
     }
+	
