@@ -36,22 +36,12 @@ To define the options, use the cmake interface
 ```bash
 cmake-gui .. or ccmake ..
 ```
+ Note: Configuration options can also be edited by creating a `UserConfig.cmake` file from a `DefaultConfig.cmake` file
+ in the cmake folder.
 
 ### Compiling RINGMesh
 
-To compile you need the following packages (on Debian-based linux):
-
- * build-essential
- * libx11-dev
- * libxrandr-dev
- * libxinerama-dev
- * libxcursor-dev
- * freeglut3-dev
- * libxi-dev
-
-Note: you need gcc/g++ version higher or equal to 4.8 to compile RINGMesh.
-
-Then, to compile RINGMesh, go to RINGMesh root directory and:
+To compile RINGMesh, go to RINGMesh root directory and:
 
 ```bash
 cd build/Release
@@ -59,10 +49,12 @@ make
 ```
 To build in debug, go to build/Debug instead.
 
+Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to 4.8 to compile it.
+
 ### Compiling the documentation
 
-To be able to compile the documentation, you have to set the cmake flag `BUILD_DOCUMENTATION`
-to on when configuring the project:
+Set the cmake flag `BUILD_DOCUMENTATION` to `ON` when configuring RINGMesh to enable the built of the
+documentation with the following commands:
 
 ```bash
 cd build
@@ -92,42 +84,52 @@ Eclipse: File>Import...>General>Existing Projects into Workspace.
 
 ### Configuring RINGMesh
 
-Launch CMake GUI, indicate where is the source code as the path to RINGMesh root and
-where to put the binaries as this_root/build/ringmesh.
-Configuration options can be set in using the interface.
+ * Launch CMake GUI interface. 
+ * Indicate where is the source code as the path to RINGMesh root and where to put the binaries as 
+ `RINGMesh_root/build`.
+ * Set the Configuration options using the CMake GUI interface.
+ * Launch the `configure`and `generate` option.
 
-RINGMesh has previously been compiled with:
+ Note: Configuration options can also be edited by creating a `UserConfig.cmake` file from a `DefaultConfig.cmake` file
+ in the cmake folder.
 
-* Visual Studio 10 2010 Win64
-* Visual Studio 11 2012 Win64
+RINGMesh compils with the following visual studio version:
+
 * Visual Studio 12 2013 Win64
 * Visual Studio 14 2015 Win64
 * Visual Studio 15 2017 Win64
 
+Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for VisualStudio through the 
+VisualStudio installer.
+
+
 ### Compiling RINGMesh
 
-Make sure that you have installed C++ package for VisualStudio through the VisualStudio installer.
-You can either launch building in VisualStudio or calling cmake in command line
-in the build directory created at the configuration step:
+RINGMesh need several third parties that are automatically compiled and installed by compiling 
+the project `SUPERBUILD.sln`.
 
-```
-cmake --build . --config Release
-cmake --build . --config Debug
-cmake --build . --config RelWithDebInfo
-```
+ * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
+ * Build the solution.
+ 
+All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created.
+
+ * Open the project `RINGMesh.sln`.
+ * Build the solution. 
 
 The available compilation modes are:
 
 * Release
 * Debug
-* RelWithDebInfo (mandatory to debug a Gocad plugin in Debug mode with a Gocad
-  in Release, there are issues between libraries in Debug linked to a Gocad plugin)
+* RelWithDebInfo 
+
+Note: The compilation mode `RelWithDebInfo` is mandatory to run a Gocad plugin in Debug mode with Gocad
+  in Release, there are issues between libraries in Debug linked to a Gocad plugin.
 
 ### Compiling the documentation
 
-* Check the BUILD_DOCUMENTATION option when using cmake
-* Open the solution which is in build/ringmesh/RINGmesh.sln in VisualStudio
-* Build the doc-devkit or the doc-devkit-lite project
+* Check the BUILD_DOCUMENTATION option during the configuration of RINGMesh with cmake
+* Open the solution which is in build/RINGMesh.sln in VisualStudio
+* Build the doc-devkit
 
 See the documentation section for more details.
 
