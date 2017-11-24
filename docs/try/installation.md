@@ -129,7 +129,7 @@ Note: The compilation mode `RelWithDebInfo` is mandatory to run a Gocad plugin i
 
 * Check the BUILD_DOCUMENTATION option during the configuration of RINGMesh with cmake
 * Open the solution which is in build/RINGMesh.sln in VisualStudio
-* Build the doc-devkit or the doc-devkit-lite project
+* Build the doc-devkit
 
 See the documentation section for more details.
 
