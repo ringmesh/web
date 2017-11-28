@@ -51,17 +51,14 @@ To build in debug, go to build/Debug instead.
 
 Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to 4.8 to compile it.
 
-### Compiling the documentation
+### Generating the documentation
 
-Set the cmake flag `BUILD_DOCUMENTATION` to `ON` when configuring RINGMesh to enable the built of the
-documentation with the following commands:
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation using the following command:
 
 ```bash
-cd build
-cmake .. -DBUILD_DOCUMENTATION:bool=on
-cd build Release
 make doc-devkit
 ```
+
 ### Troubleshooting
 
 If you get this error during geogram gfx compilation (occured for Ubuntu 17.04):
