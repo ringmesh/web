@@ -34,6 +34,11 @@ _The SEG/EAGE Overthrust model._
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Nov 20, 2017 | New RINGMesh website !
+
+## Contact
+
+Please, use the GitHub [issue tracker](https://github.com/ringmesh/RINGMesh/issues) to ask any questions or report bugs.
+See the [About](about.md) page for additional information on our team.
 </div>
 
 <div class="col-md-12" news-table markdown="1">
