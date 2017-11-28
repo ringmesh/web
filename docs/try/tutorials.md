@@ -1,7 +1,7 @@
 
 #Tutorials
 ##Basics
- * [Install and Compile](): link to a webinar to compil and install RINGmesh.
+ * [Install and Compile](): link to a webinar to compile and install RINGmesh.
  * [Integrate RINGMesh](): How to create a project depending on RINGMesh.
  * [GeoModel Basics](tutorials/geomodel/geomodel-basics): How to build and use GeoModels.
 

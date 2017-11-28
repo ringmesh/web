@@ -1,12 +1,12 @@
 
 ## Basic functionalities on GeoModel
 The most efficient way to build a GeoModel is to import its geometry and topology from a
-geomodeler. This tutorial present a simple code to load manipulate and export `GeoModel`.
+geomodeler. This tutorial presents a simple code to load manipulate and export `GeoModel`.
 
 ### GeoModel I/O
 
 GeoModel stores the geometry and the topology of a geological model. It can be imported from boundary 
-representation or volumetric representation file format.
+representation or volumetric representation file.
 RINGMesh uses an extensible design to handle various file formats.
 The file extention is the key for selecting the suitable loader/saver. 
 The Input/Output file formats currently supported by RINGMesh are listed [here](/features/file_formats).
@@ -17,20 +17,20 @@ A GeoModel can be loaded and saved as follow:
 	 GeoModel3D geomodel ;
 	
 	 // LOADING
-	 //path to the file to load
-	 //the file extention is the factory key.
+	 // path to the file to load
+	 // the file extention is the factory key.
 	 std::string input_file_name = "path/to/your_input_model.key";
-	 //function to load a geomodel from input_file_name
+	 // function to load a geomodel from input_file_name
 	 geomodel_load( geomodel, input_file_name ) ;
 	 
-	 //SAVING
-	 //path to the file to write
-	 //the file extention is the factory key.
+	 // SAVING
+	 // path to the file to write
+	 // the file extention is the factory key.
 	 std::string output_file_name = "path/to/your_output_model.key"; 
 	 geomodel_save(geomodel, output_file_name);
 
 When a GeoModel is loaded, its validity is automatically checked and resulting information 
-are displayed in the consol terminal.
+are displayed.
 
 ####Try:
 
@@ -67,7 +67,7 @@ Try:
 The GeoModelMesh is made of four data bases to provide a global and unique indexing of mesh component.
 This ease a global iteration through the GeoModel.
 
-	//Build GeoModelMesh
+	// Build GeoModelMesh
 	GeoModelMesh gmm(geomodel);
 	
 	// Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
