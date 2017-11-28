@@ -1,13 +1,16 @@
 <div class="col-md-6" news-table markdown="1">
 
 <center>
-<img src="img/ringmesh.png" alt="logo" width="400"/>
+<img src="img/ringmesh.png" alt="logo" width="350"/>
 </center>
 
-## Highlights
+RINGMesh is a C++ open-source programming library for manipulating meshes of geological models. RINGMesh is neither a geomodeler nor a mesh generation tool, but it can be used to develop geomodeling mesh based applications, such as meshing and numerical simulation tools.
+
+## Features
 * Efficient data structure to handle geological models
-* Abstract mesh classes to represent the geometry of geological model entities
-* Responsive API to use meshes in physical simulators
+* Validity checks of geometric, geological and topological consistency.
+* Meshes representing the geometry of geological model entities can be extented using your own data structure
+* Complete and user-friendly API to use meshes in physical simulators
 * Lightweight geological model viewer
 * Utilities to convert geological models into another file format
 
