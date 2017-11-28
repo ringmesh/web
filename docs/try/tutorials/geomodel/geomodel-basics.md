@@ -1,15 +1,15 @@
 
 ## Basic functionalities on GeoModel
 The most efficient way to build a GeoModel is to import its geometry and topology from a
-geomodeler. This tutorial present a simple code to load manipulate and export GeoModel
+geomodeler. This tutorial present a simple code to load manipulate and export `GeoModel`.
 
 ### GeoModel I/O
 
-GeoModel store the geometry and the topology of a geological model. It can be imported from boundary 
+GeoModel stores the geometry and the topology of a geological model. It can be imported from boundary 
 representation or volumetric representation file format.
-RINGMesh use a factory design pattern to allow an easy implementation of various Input/Output management. 
-The file extention is the factory key. 
-The Input/Output file format currently supported by RINGMesh are listed [here](/features/file_formats).
+RINGMesh uses an extensible design to handle various file formats.
+The file extention is the key for selecting the suitable loader/saver. 
+The Input/Output file formats currently supported by RINGMesh are listed [here](/features/file_formats).
 
 A GeoModel can be loaded and saved as follow:
 
@@ -18,34 +18,34 @@ A GeoModel can be loaded and saved as follow:
 	
 	 // LOADING
 	 //path to the file to load
-	 //the file extention is the factroy key.
+	 //the file extention is the factory key.
 	 std::string input_file_name = "path/to/your_input_model.key";
-	 //static function to load a geomodel from input_file_name
+	 //function to load a geomodel from input_file_name
 	 geomodel_load( geomodel, input_file_name ) ;
 	 
 	 //SAVING
 	 //path to the file to write
-	 //the file extention is the factroy key.
+	 //the file extention is the factory key.
 	 std::string output_file_name = "path/to/your_output_model.key"; 
 	 geomodel_save(geomodel, output_file_name);
 
 When a GeoModel is loaded, its validity is automatically checked and resulting information 
-are printed in the consol terminal.
+are displayed in the consol terminal.
 
 ####Try:
 
- * Load the `ModelA1.ml` (a 3D model boundary representation from gocad) 
+ * Load the `ModelA1.ml` (a 3D model boundary representation from gocad).
  * Save it to the GINGMesh file format (.gm)`ModelA1.gm`.
- * Open and analyse the .gm file [see description](/features/file_formats).
+ * Open and look at the .gm file [see description](/features/file_formats).
 
 ### Basic Usage
-Once created several functions can be called to study/manipulate/repair the GeoModel:
+Several functions can be called to study/manipulate/repair the GeoModel:
 
 	print_geomodel_mesh_stats( geomodel ) ; //print the geomodel statistics in the command terminal
 	is_geomodel_valid( geomodel ) ; //investigate the validity of the geomodel
 	translate(geomodel, {0,0,100}) ; //translate geomodel along vertical axis
 	
-If RINGMesh is compilled with a meshing sofware:
+If RINGMesh is compiled with a meshing sofware:
  
 	tetgen_tetrahedralize_geomodel_regions( geomodel ) ; //build volumetric mesh in geomodel regions using TetGen [Si,2015] 
 	
@@ -53,10 +53,10 @@ This is not an exaustive list of functionalities. Please look at the doxygen doc
 
 Try:
 
- * Load the `ModelA1.ml` (a 3D model boundary representation from gocad) 
- * print statistics on the imported geomodel
- * mesh it with TetGen
- * print statistics on the imported geomodel
+ * Load the `ModelA1.ml` (a 3D model boundary representation from gocad).
+ * Print statistics on the imported geomodel.
+ * Mesh it with TetGen.
+ * Print statistics on the imported geomodel.
  * Save it to the GINGMesh file format (.gm) `ModelA1.gm`.
  * Open and analyse the .gm file [see description](/features/file_formats).
  
@@ -64,7 +64,7 @@ Try:
 
 ### Manipulate GeoModelMesh
 
-The GeoModelMesh is contain four data bases to provide a global and unique indexing of mesh component.
+The GeoModelMesh is made of four data bases to provide a global and unique indexing of mesh component.
 This ease a global iteration through the GeoModel.
 
 	//Build GeoModelMesh
