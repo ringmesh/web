@@ -85,6 +85,17 @@ footer {
     font-weight: 200;
 }
 
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1 0 auto;
+}
+
 .modal-dialog {
     margin-top: 70px;
 }
