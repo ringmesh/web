@@ -62,6 +62,50 @@ Try:
  
 ### Manipulate GeoModelEntities
 
+There are two kinds of GeoModelEntities: GeoModelMeshEntities such as Corners, Lines, Surfaces and Regions
+and GeoModelGeologicalEntities such as Contact, Interface, Layer (but you also can add yours) [see GeoModel](/features/geomodel).
+
+The following consists in two code samples about each kind of GeoModelEntities usage.
+
+#### GeoModelMeshEntities
+
+    // Iterates on the Surfaces of a GeoModel and looks for boundaries and incident_entities
+    for( const auto& surface : geomodel.surfaces() ) 
+    {
+        for( auto boundary_id : range( surface.nb_boundaries() ) // Iterates on boundary lines 
+        {
+            const auto& line = surface.boundary( boundary_id );
+            ...
+        }
+        for( auto incident_id : range( surface.nb_incident_entities() ) // Iterates on incident regions (max. 2 incident regions) 
+        {
+            const auto& region = surface.incident_entity( incident_id );
+            ...
+        }
+    }
+
+#### GeoModelGeologicalEntities
+
+    // Iterates on the Interfaces of a GeoModel and looks for children (being GeoModelMeshEntities)
+    for( const auto& interface : geomodel.geol_entities( Interface::type_name_static() ) ) 
+    {
+        for( auto child_id : range( interface.nb_children() ) // Iterates on boundary lines 
+        {
+            const auto& surface = interface.child( child_id );
+            ...
+        }
+    }
+    
+    // Iterates on the Surfaces of a GeoModel and looks for them parent of type Interface
+    for( const auto& surface : geomodel.surfaces() ) 
+    {
+        if( surface.has_parent( Interface::type_name_static() ) )
+        {
+            const auto& interface = surface.parent( Interface::type_name_static() );
+            ...
+        }
+    }
+
 ### Manipulate GeoModelMesh
 
 The GeoModelMesh is made of four data bases to provide a global and unique indexing of mesh component.
@@ -71,29 +115,36 @@ This ease a global iteration through the GeoModel.
 	GeoModelMesh gmm(geomodel);
 	
 	// Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
-    for( index_t v = 0; v < gmm.vertices.nb_vertices(); v++ ) {
-        const vec3& point = gmm.vertices.vertex( v ) ;
+    for( auto v : range( gmm.vertices.nb_vertices() ) ) 
+    {
+        const vec3& point = gmm.vertices.vertex( v );
     }
 	
     // Iterates on the RINGMesh::GeoModelMesh (gmm) facets without redundancy
-    for( index_t s = 0; s < gmm.model().nb_surfaces(); s++ ) {
+    for( auto surface_id : range( gmm.model().nb_surfaces() ) ) 
+    {
         // Each surface can be stored twice if it is at the interface of two meshes
-        for( index_t f = 0; f < gmm.facets.nb_facets( s ); f++ ) { // It is also possible to iterate only on triangle or quad
-            index_t facet_id_in_the_mesh = gmm.facets.facet( s, f ) ;
-            std::cout << "Nb vertices in the facets: " << gmm.facets.nb_vertices( facet_id_in_the_mesh ) << std::endl ;
+        for( auto polygon_id : range( gmm.polygons.nb_polygons( surface_id ) ) ) // It is also possible to iterate only on triangles or quads
+        { 
+            auto polygon_id_in_the_mesh = gmm.polygons.polygon( surface_id, polygon_id );
+            std::cout << "Nb vertices in the polygon: " << gmm.polygons.nb_vertices( polygon_id_in_the_mesh ) << std::endl;
         }
     }
 
-    // Iterates on the RINGMesh::GeoModelMesh (gmm) cells and its adjacent cells
-    for( index_t m = 0; m < gmm.model().nb_regions(); m++ ) {
-        for( index_t c = 0; c < gmm.cells.nb_cells( m ); c++ ) { // It is also possible to iterate only on one element type
-            index_t cell_in_gmm = gmm.cells.cell( m, c ) ;
-            for( index_t f = 0; f < gmm.cells.nb_facets( cell_in_gmm ); f++ ) {
-                index_t global_c_adj = gmm.cells.adjacent( cell_in_gmm, f ) ; // Global cell adjacent index
-                if( global_c_adj == GEO::NO_CELL ) {
+    // Iterates on the RINGMesh::GeoModelMesh (gmm) cells and their adjacent cells
+    for( auto region_id : range( gmm.model().nb_regions() ) ) {
+        for( auto cell_id : range( gmm.cells.nb_cells( region_id ) ) ) // It is also possible to iterate only on a specific cell type
+        { 
+            auto cell_in_gmm = gmm.cells.cell( region_id, cell_id );
+            for( auto facet_id : range( gmm.cells.nb_facets( cell_in_gmm ) ) ) 
+            {
+                index_t global_c_adj = gmm.cells.adjacent( { cell_in_gmm, facet_id } ); // Global cell adjacent index
+                if( global_c_adj == GEO::NO_CELL ) 
+                {
                     // The cell is on the border
                     ...
-                } else {
+                } else 
+                {
                     ...
                 }
             } 
