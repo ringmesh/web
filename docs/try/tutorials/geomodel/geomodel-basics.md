@@ -65,7 +65,7 @@ Try:
 ### Manipulate GeoModelEntities
 This part is dedicated to GeoModel toplogical Entities [see GeoModel](/features/geomodel). 
 It shows how to access and manipulate geometrical and geological enties either 
-by their global index or their adjacency relationshis.
+by their global index or their adjacency relationships.
 
 #### GeoModelMeshEntities
 This example shows how to iterates on geometrical enties that define the boundary representation of the model.
