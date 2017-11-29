@@ -13,6 +13,7 @@ The Input/Output file formats currently supported by RINGMesh are listed [here](
 
 A GeoModel can be loaded and saved as follow:
 
+```
 	 // GeoModel instantiation in 3D
 	 GeoModel3D geomodel ;
 	
@@ -28,6 +29,7 @@ A GeoModel can be loaded and saved as follow:
 	 // the file extention is the factory key.
 	 std::string output_file_name = "path/to/your_output_model.key"; 
 	 geomodel_save(geomodel, output_file_name);
+```
 
 When a GeoModel is loaded, its validity is automatically checked and resulting information 
 are displayed.
@@ -61,93 +63,107 @@ Try:
  * Open and analyse the .gm file [see description](/features/file_formats).
  
 ### Manipulate GeoModelEntities
-
-There are two kinds of GeoModelEntities: GeoModelMeshEntities such as Corners, Lines, Surfaces and Regions
-and GeoModelGeologicalEntities such as Contact, Interface, Layer (but you also can add yours) [see GeoModel](/features/geomodel).
-
-The following consists in two code samples about each kind of GeoModelEntities usage.
+This part is dedicated to GeoModel toplogical Entities [see GeoModel](/features/geomodel). 
+It shows how to access and manipulate geometrical and geological enties either 
+by their global index or their adjacency relationshis.
 
 #### GeoModelMeshEntities
+This example shows how to iterates on geometrical enties that define the boundary representation of the model.
 
+```
     // Iterates on the Surfaces of a GeoModel and looks for boundaries and incident_entities
     for( const auto& surface : geomodel.surfaces() ) 
     {
-        for( auto boundary_id : range( surface.nb_boundaries() ) // Iterates on boundary lines 
+		// Iterates on boundary lines
+        for( auto boundary_id : range( surface.nb_boundaries() )  
         {
             const auto& line = surface.boundary( boundary_id );
             ...
         }
-        for( auto incident_id : range( surface.nb_incident_entities() ) // Iterates on incident regions (max. 2 incident regions) 
+		// Iterates on incident regions (max. 2 incident regions)
+        for( auto incident_id : range( surface.nb_incident_entities() )  
         {
             const auto& region = surface.incident_entity( incident_id );
             ...
         }
     }
+```
 
 #### GeoModelGeologicalEntities
+This example shows how to iterate on geological enties. It allows to access to geometrical entities that belong 
+to the same geological feature.
 
+```
     // Iterates on the Interfaces of a GeoModel and looks for children (being GeoModelMeshEntities)
-    for( const auto& interface : geomodel.geol_entities( Interface::type_name_static() ) ) 
+    for( const auto& cur_interface : geomodel.geol_entities( Interface::type_name_static() ) ) 
     {
-        for( auto child_id : range( interface.nb_children() ) // Iterates on boundary lines 
+		// Iterates on boundary lines
+        for( auto child_id : range( cur_interface.nb_children() )  
         {
-            const auto& surface = interface.child( child_id );
+            const auto& surface = cur_interface.child( child_id );
             ...
         }
     }
     
     // Iterates on the Surfaces of a GeoModel and looks for them parent of type Interface
-    for( const auto& surface : geomodel.surfaces() ) 
+    for( const auto& cur_surface : geomodel.surfaces() ) 
     {
-        if( surface.has_parent( Interface::type_name_static() ) )
+        if( cur_surface.has_parent( Interface::type_name_static() ) )
         {
-            const auto& interface = surface.parent( Interface::type_name_static() );
+            const auto& parent = cur_surface.parent( Interface::type_name_static() );
             ...
         }
     }
+```
 
 ### Manipulate GeoModelMesh
 
 The GeoModelMesh is made of four data bases to provide a global and unique indexing of mesh component.
 This ease a global iteration through the GeoModel.
 
+```
 	// Build GeoModelMesh
 	GeoModelMesh gmm(geomodel);
 	
 	// Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
     for( auto v : range( gmm.vertices.nb_vertices() ) ) 
     {
-        const vec3& point = gmm.vertices.vertex( v );
+        const auto& point = gmm.vertices.vertex( v );
     }
 	
     // Iterates on the RINGMesh::GeoModelMesh (gmm) facets without redundancy
     for( auto surface_id : range( gmm.model().nb_surfaces() ) ) 
     {
         // Each surface can be stored twice if it is at the interface of two meshes
-        for( auto polygon_id : range( gmm.polygons.nb_polygons( surface_id ) ) ) // It is also possible to iterate only on triangles or quads
+		// It is also possible to iterate only on triangles or quads
+        for( auto polygon_id : range( gmm.polygons.nb_polygons( surface_id ) ) ) 
         { 
             auto polygon_id_in_the_mesh = gmm.polygons.polygon( surface_id, polygon_id );
-            std::cout << "Nb vertices in the polygon: " << gmm.polygons.nb_vertices( polygon_id_in_the_mesh ) << std::endl;
+            std::cout << "Nb vertices in the polygon: " << 
+				gmm.polygons.nb_vertices( polygon_id_in_the_mesh ) << std::endl;
         }
     }
 
     // Iterates on the RINGMesh::GeoModelMesh (gmm) cells and their adjacent cells
     for( auto region_id : range( gmm.model().nb_regions() ) ) {
-        for( auto cell_id : range( gmm.cells.nb_cells( region_id ) ) ) // It is also possible to iterate only on a specific cell type
+		// It is also possible to iterate only on a specific cell type
+        for( auto cell_id : range( gmm.cells.nb_cells( region_id ) ) ) 
         { 
             auto cell_in_gmm = gmm.cells.cell( region_id, cell_id );
             for( auto facet_id : range( gmm.cells.nb_facets( cell_in_gmm ) ) ) 
             {
-                index_t global_c_adj = gmm.cells.adjacent( { cell_in_gmm, facet_id } ); // Global cell adjacent index
-                if( global_c_adj == GEO::NO_CELL ) 
+				// Global cell adjacent index
+                auto global_c_adj = gmm.cells.adjacent( { cell_in_gmm, facet_id } ); 
+                if( global_c_adj == NO_ID ) 
                 {
                     // The cell is on the border
                     ...
-                } else 
+                } 
+				else 
                 {
                     ...
                 }
             } 
         }
     }
-	
+```
