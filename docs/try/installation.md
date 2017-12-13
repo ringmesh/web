@@ -87,10 +87,9 @@ Eclipse: File>Import...>General>Existing Projects into Workspace.
  * Set the Configuration options using the CMake GUI interface.
  * Launch the `configure`and `generate` option.
 
- Note: Configuration options can also be edited by creating a `UserConfig.cmake` file from a `DefaultConfig.cmake` file
- in the cmake folder.
+ Note: Configuration options can also be given by creating a `UserConfig.cmake` file in the cmake folder.
 
-RINGMesh compils with the following visual studio version:
+RINGMesh compiles with the following Visual Studio version:
 
 * Visual Studio 12 2013 Win64
 * Visual Studio 14 2015 Win64
