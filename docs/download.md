@@ -3,15 +3,21 @@
 ## Current development
 
 <div class="horizontal_expand" markdown="1">
+<div>
 [<button type="button" class="btn btn-success">
 **Linux**
 </button>](download/RINGMesh-master-Linux.tar.gz)
+</div>
+<div>
 [<button type="button" class="btn btn-success">
 **MacOS**
 </button>](download/RINGMesh-master-Darwin.tar.gz)
+</div>
+<div>
 [<button type="button" class="btn btn-success">
 **Windows (work in progress)**
 </button>]()
+</div>
 </div>
 
 # Download sources
