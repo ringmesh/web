@@ -17,7 +17,6 @@
 # Download sources
 
 ## Latest Release
-
 [<button type="button" class="btn btn-success">
 **5.0.0 (09/06/2017)**
 </button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
