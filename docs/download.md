@@ -1,10 +1,4 @@
-# Downloads
-
-## Latest Release
-
-[<button type="button" class="btn btn-success">
-**5.0.0 (sources)**
-</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
+# Download packages
 
 ## Current development
 
@@ -17,6 +11,14 @@
 [<button type="button" class="btn btn-success">
 **Windows (work in progress)**
 </button>]()
+
+# Download sources
+
+## Latest Release
+
+[<button type="button" class="btn btn-success">
+**5.0.0 (09/06/2017)**
+</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
 
 ## Older Release
 
