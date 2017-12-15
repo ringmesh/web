@@ -4,10 +4,10 @@
 
 [<button type="button" class="btn btn-success">
 **Linux**
-</button>](RINGMesh-master-Linux.tar.gz)
+</button>](download/RINGMesh-master-Linux.tar.gz)
 [<button type="button" class="btn btn-success">
 **MacOS**
-</button>](RINGMesh-master-Darwin.tar.gz)
+</button>](download/RINGMesh-master-Darwin.tar.gz)
 [<button type="button" class="btn btn-success">
 **Windows (work in progress)**
 </button>]()
