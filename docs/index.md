@@ -43,7 +43,7 @@ See the [About](about.md) page for additional information on our team.
 
 <div class="col-md-12" news-table markdown="1">
 ## They are already using it!
-<div class="logo_users">
+<div class="horizontal_expand logo_users">
 <div></div>
 <div><a href="https://www.ring-team.org/"><img src="img/logo_ring.png" alt="Logo RING"/></a></div>
 <div><a href="https://www.total.com/en"><img src="img/logo_total.png" alt="Logo Total"/></a></div>

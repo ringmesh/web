@@ -2,6 +2,7 @@
 
 ## Current development
 
+<div class="horizontal_expand" markdown="1">
 [<button type="button" class="btn btn-success">
 **Linux**
 </button>](RINGMesh-master-Linux.tar.gz)
@@ -11,6 +12,7 @@
 [<button type="button" class="btn btn-success">
 **Windows (work in progress)**
 </button>]()
+</div>
 
 # Download sources
 
