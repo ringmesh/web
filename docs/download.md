@@ -4,7 +4,7 @@ RINGMesh is an open-source project.
 The code can be found on [GitHub](https://github.com/ringmesh/RINGMesh).
 Please, create a fork to edit the code or use the GitHub [issue tracker](https://github.com/ringmesh/RINGMesh/issues) to ask any questions or report bugs.
 
-# Download packages
+# Packages
 
 ## Current development
 
