@@ -1,3 +1,9 @@
+#Source code
+
+RINGMesh is an open-source project. 
+The code can be found on <a href="https://github.com/ringmesh/RINGMesh" class="fa fa-github">GitHub</i>.
+Please, create a fork to edit the code or use the GitHub [issue tracker](https://github.com/ringmesh/RINGMesh/issues) to ask any questions or report bugs.
+
 # Download packages
 
 ## Current development
@@ -19,21 +25,3 @@
 </button>]()
 </div>
 </div>
-
-# Download sources
-
-## Latest Release
-
-[<button type="button" class="btn btn-success">
-**5.0.0 (09/06/2017)**
-</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
-
-## Older Release
-
-Version                                                                      | Release Date
------------------------------------------------------------------------------|-------------
-[4.1.0](https://github.com/ringmesh/RINGMesh/archive/4.1.0.zip)              | 07/05/2017
-[4.0.0](https://github.com/ringmesh/RINGMesh/archive/4.0.0.zip)              | 03/14/2017
-[2.0.0](https://github.com/ringmesh/RINGMesh/archive/2.0.0.zip)              | 01/20/2016
-[1.1.15-rc](https://github.com/ringmesh/RINGMesh/archive/1.1.15-rc.zip)      | 06/11/2015
-[1.1.15-beta](https://github.com/ringmesh/RINGMesh/archive/1.0.15-beta.zip)  | 05/27/2015
