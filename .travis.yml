@@ -6,9 +6,7 @@ install:
   - pip install mkdocs
 script:
   - mkdocs build  --verbose --clean --strict
-  - ls site/download
   - cp download/* site/download/
-  - ls site/download
 deploy:
  provider: pages
  skip_cleanup: true
