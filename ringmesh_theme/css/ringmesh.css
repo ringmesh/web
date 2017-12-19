@@ -71,7 +71,7 @@ a {
     border-color: #3083a1ff;
 }
 
-.logo_users {
+.horizontal_expand {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

@@ -1,31 +1,27 @@
-# Download packages
+#Source code
+
+RINGMesh is an open-source project. 
+The code can be found on [GitHub](https://github.com/ringmesh/RINGMesh).
+Please, create a fork to edit the code or use the GitHub [issue tracker](https://github.com/ringmesh/RINGMesh/issues) to ask any questions or report bugs.
+
+# Packages
 
 ## Current development
 
+<div class="horizontal_expand" markdown="1">
+<div>
 [<button type="button" class="btn btn-success">
-**Linux**
+**Linux** <img src="../img/linux-white.png" alt="linux logo" height="25">
 </button>](download/RINGMesh-master-Linux.tar.gz)
+</div>
+<div>
 [<button type="button" class="btn btn-success">
-**MacOS**
+**MacOS** <img src="../img/apple-white.png" alt="apple logo" height="25">
 </button>](download/RINGMesh-master-Darwin.tar.gz)
+</div>
+<div>
 [<button type="button" class="btn btn-success">
-**Windows (work in progress)**
+**Windows (work in progress)** <img src="../img/windows-white.png" alt="windows logo" height="25">
 </button>]()
-
-# Download sources
-
-## Latest Release
-
-[<button type="button" class="btn btn-success">
-**5.0.0 (09/06/2017)**
-</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
-
-## Older Release
-
-Version                                                                      | Release Date
------------------------------------------------------------------------------|-------------
-[4.1.0](https://github.com/ringmesh/RINGMesh/archive/4.1.0.zip)              | 07/05/2017
-[4.0.0](https://github.com/ringmesh/RINGMesh/archive/4.0.0.zip)              | 03/14/2017
-[2.0.0](https://github.com/ringmesh/RINGMesh/archive/2.0.0.zip)              | 01/20/2016
-[1.1.15-rc](https://github.com/ringmesh/RINGMesh/archive/1.1.15-rc.zip)      | 06/11/2015
-[1.1.15-beta](https://github.com/ringmesh/RINGMesh/archive/1.0.15-beta.zip)  | 05/27/2015
+</div>
+</div>
