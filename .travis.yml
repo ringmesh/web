@@ -5,7 +5,8 @@ branches:
 install:
   - pip install mkdocs
 script:
-  - mkdocs build --verbose --clean --strict
+  - mkdocs build  --verbose --clean --strict
+  - cp download/* site/download/
 deploy:
  provider: pages
  skip_cleanup: true
