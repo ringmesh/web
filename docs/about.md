@@ -31,7 +31,7 @@ RINGMesh is licensed under the 3-clauses BSD License (also called "Revised BSD L
 "New BSD License", or "Modified BSD License")
 
 
-Copyright (c) 2012-2017, Association Scientifique pour la Geologie et ses
+Copyright (c) 2012-2018, Association Scientifique pour la Geologie et ses
 Applications (ASGA). All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
