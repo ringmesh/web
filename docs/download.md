@@ -16,7 +16,7 @@ Please, create a fork to edit the code or use the GitHub [issue tracker](https:/
 </div>
 <div>
 [<button type="button" class="btn btn-success">
-**MacOS (in progress)** <img src="../img/apple-white.png" alt="windows logo" height="25">
+**MacOS (in progress)** <img src="../img/apple-white.png" alt="apple logo" height="25">
 </button>](download/RINGMesh-master-Darwin.tar.gz)
 </div>
 <div>
