@@ -21,12 +21,12 @@ Please, create a fork to edit the code or use the GitHub [issue tracker](https:/
 </div>
 <div>
 [<button type="button" class="btn btn-success">
-**Windows VS2013 (in progress)** <img src="../img/windows-white.png" alt="windows logo" height="25">
+**Windows (VS2013)** <img src="../img/windows-white.png" alt="windows logo" height="25">
 </button>](download/RINGMesh-master-Win64-vs2013.zip)
 </div>
 <div>
 [<button type="button" class="btn btn-success">
-**Windows VS2015 (in progress)** <img src="../img/windows-white.png" alt="windows logo" height="25">
+**Windows (VS2015)** <img src="../img/windows-white.png" alt="windows logo" height="25">
 </button>](download/RINGMesh-master-Win64-vs2015.zip)
 </div>
 </div>
