@@ -1,4 +1,4 @@
-site_name: RINGMesh
+site_name: RINGMesh - Platform for geological models
 docs_dir: 'docs'
 site_description: 'RINGMesh is a C++ open-source platform for manipulating meshes of geological models.'
 
