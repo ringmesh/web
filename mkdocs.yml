@@ -30,3 +30,6 @@ copyright: Copyright &copy; 2017, Association Scientifique pour la Géologie et 
 theme:
     name: null
     custom_dir: ringmesh_theme
+
+extra:
+    site_name_short: RINGMesh
