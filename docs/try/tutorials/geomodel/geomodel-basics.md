@@ -37,7 +37,7 @@ are displayed.
 ####Try:
 
  * Load the `ModelA1.ml` (a 3D model boundary representation from gocad).
- * Save it to the GINGMesh file format (.gm)`ModelA1.gm`.
+ * Save it to the RINGMesh file format (.gm)`ModelA1.gm`.
  * Open and look at the .gm file [see description](/features/file_formats).
 
 ### Basic Usage
@@ -67,7 +67,7 @@ Try:
  * Print statistics on the imported geomodel.
  * Mesh it with TetGen.
  * Print statistics on the imported geomodel.
- * Save it to the GINGMesh file format (.gm) `ModelA1.gm`.
+ * Save it to the RINGMesh file format (.gm) `ModelA1.gm`.
  * Open and analyse the .gm file [see description](/features/file_formats).
 
 ### Manipulate GeoModelEntities
@@ -134,13 +134,13 @@ This ease a global iteration through the GeoModel.
 GeoModelMesh gmm(geomodel);
 
 // Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
-for( auto v : range( gmm.vertices.nb_vertices() ) )
+for( auto v : range( gmm.vertices.nb() ) )
 {
     const auto& point = gmm.vertices.vertex( v );
 }
 
 // Iterates on the RINGMesh::GeoModelMesh (gmm) facets without redundancy
-for( auto surface_id : range( gmm.model().nb_surfaces() ) )
+for( auto surface_id : range( gmm.geomodel().nb_surfaces() ) )
 {
     // Each surface can be stored twice if it is at the interface of two meshes
     // It is also possible to iterate only on triangles or quads
@@ -153,7 +153,7 @@ for( auto surface_id : range( gmm.model().nb_surfaces() ) )
 }
 
 // Iterates on the RINGMesh::GeoModelMesh (gmm) cells and their adjacent cells
-for( auto region_id : range( gmm.model().nb_regions() ) ) {
+for( auto region_id : range( gmm.geomodel().nb_regions() ) ) {
     // It is also possible to iterate only on a specific cell type
     for( auto cell_id : range( gmm.cells.nb_cells( region_id ) ) )
     {

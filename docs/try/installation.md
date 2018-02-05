@@ -1,8 +1,11 @@
 # Configuration and compilation
 
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
-You will need CMake (version >= 3.1). There is no other dependency (everything
-you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.
+You will need:
+ * CMake (version >= 3.1)
+ * gcc/g++ version higher or equal to 4.8
+ There is no other dependency (everything you need is shipped with RINGMesh). 
+ Follow the Linux, Mac OS or Windows instructions below.
 
 To clone RINGMesh you need Git (https://git-scm.com/).
 Make sure that Git binary directory is in your computer path (environment variable).
@@ -58,6 +61,7 @@ If Doxygen is installed on your computer, a target ```doc-devkit``` is built dur
 ```bash
 make doc-devkit
 ```
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/ringmesh/devkit/html/index.html`
 
 ### Troubleshooting
 
@@ -107,7 +111,7 @@ the project `SUPERBUILD.sln`.
  * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
  * Build the solution.
  
-All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created.
+All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in therepository : `RINGMesh_root/build/ringmesh`.
 
  * Open the project `RINGMesh.sln`.
  * Build the solution. 
@@ -118,16 +122,15 @@ The available compilation modes are:
 * Debug
 * RelWithDebInfo 
 
-Note: The compilation mode `RelWithDebInfo` is mandatory to run a Gocad plugin in Debug mode with Gocad
-  in Release, there are issues between libraries in Debug linked to a Gocad plugin.
+Note: Visual studio have on pile per configuration mode. You must link consistently with the expected configuration mode.
 
 ### Compiling the documentation
 
-* Check the BUILD_DOCUMENTATION option during the configuration of RINGMesh with cmake
-* Open the solution which is in build/RINGMesh.sln in VisualStudio
-* Build the doc-devkit
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation by:
+* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in VisualStudio
+* Building the doc-devkit
 
-See the documentation section for more details.
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\ringmesh\devkit\html\index.html`
 
 ## Mac OS
 
