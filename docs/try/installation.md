@@ -39,8 +39,6 @@ To define the options, use the cmake interface
 ```bash
 cmake-gui .. or ccmake ..
 ```
- Note: Configuration options can also be edited by creating a `UserConfig.cmake` file from a `DefaultConfig.cmake` file
- in the cmake folder.
 
 ### Compiling RINGMesh
 
@@ -56,12 +54,13 @@ Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to
 
 ### Generating the documentation
 
-If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation using the following command:
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. 
+You can generate the documentation using the following command in the `RINGMesh_root/build/config` directory:
 
 ```bash
 make doc-devkit
 ```
-Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/ringmesh/devkit/html/index.html`
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/config/ringmesh/devkit/html/index.html`
 
 ### Troubleshooting
 
@@ -90,8 +89,6 @@ Eclipse: File>Import...>General>Existing Projects into Workspace.
  `RINGMesh_root/build`.
  * Set the Configuration options using the CMake GUI interface.
  * Launch the `configure`and `generate` option.
-
- Note: Configuration options can also be given by creating a `UserConfig.cmake` file in the cmake folder.
 
 RINGMesh compiles with the following Visual Studio version:
 
