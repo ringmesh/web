@@ -23,6 +23,7 @@ pages:
         - 'Supported file formats': features/file_formats.md
         - 'Viewer': features/viewer.md
     - Gallery: gallery.md
+    - Glossary: glossary.md
     - Download: download.md
     - About: about.md
 
