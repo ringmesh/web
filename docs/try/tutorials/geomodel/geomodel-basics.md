@@ -4,7 +4,7 @@ The most efficient way to build a GeoModel is to import its geometry and topolog
 geomodeler. This tutorial presents a simple code to load manipulate and export `GeoModel`.
 
 A part of the code associated to this tutorial is available in the `RINGMesh/doc/tutorials/src/geomodel-basic.cpp`.
-It can be compiled by selecting the `RINGMESH_WITH_TUTORIALS`option during the RINGMesh configuration with CMake. 
+It can be compiled by selecting the `RINGMESH_WITH_TUTORIALS` option during the RINGMesh configuration with CMake. 
 
 ### GeoModel I/O
 
