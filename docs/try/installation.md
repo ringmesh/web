@@ -96,8 +96,8 @@ RINGMesh compiles with the following Visual Studio version:
 * Visual Studio 14 2015 Win64
 * Visual Studio 15 2017 Win64
 
-Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for VisualStudio through the 
-VisualStudio installer.
+Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for Visual Studio through the 
+Visual Studio installer.
 
 
 ### Compiling RINGMesh
@@ -119,12 +119,12 @@ The available compilation modes are:
 * Debug
 * RelWithDebInfo 
 
-Note: Visual studio have on pile per configuration mode. You must link consistently with the expected configuration mode.
+Note: Visual Studio has on pile per configuration mode. You must link consistently with the expected configuration mode.
 
 ### Compiling the documentation
 
 If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation by:
-* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in VisualStudio
+* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in Visual Studio
 * Building the doc-devkit
 
 Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\ringmesh\devkit\html\index.html`
