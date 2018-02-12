@@ -1,25 +1,37 @@
 # Glossary
 
-This page explicit the meaning of words used in the RINGMesh project.
+This page gives definitions of the words commonly used in the RINGMesh project.
+
+## Base objects
+ * Point - A position in space: (x,y) in 2D or (x,y,z) in 3D.
+ * Segment - Part of a line bounded by two distinct points.
+ * Polygon - Part of a plane bounded by a finite number of non-intersecting segments closing in a loop.
+ * Polyhedron - Part of a space bounded by a finite number of non_intersecting polygons defining an interior and an exterior.
+ 
+ * N-simplex - the convex-hull of N+1 points
+   * Point: 0-simplex
+   * Segment: 1-simplex
+   * Triangle: 2-simplex
+   * Tetrahedron: 3-simplex
+ 
+
+## Elements of a mesh
+ * Mesh cell - A polyhedron of a volumetric mesh.
+ * Mesh polygon - A polygon of a surface mesh.
+ * Mesh edge - A segment of a linear mesh.
+ * Vertex - A corner point of a mesh cell, a mesh polygon or a mesh edge.
+ 
+ * Facet - A (n-1) boundary of a mesh element
+   * A face of a mesh cell
+   * An edge of a mesh polygon
+   * A vertex of a mesh edge
 
 ## Mesh: Set of elements 
- * Structured: mesh characterized by a regular connectivity between elements.
- * Unstructured: mesh characterized by an irregular connectivity between elements.
+ * Structured mesh - A mesh characterized by a regular connectivity between elements.
+ * Unstructured mesh - A mesh characterized by an irregular connectivity between elements.
  
-## Element
- * n-simplex
-  * Vertex: 0-simplex
-  * Edge: 1-simplex
-  * triangle: 2-simplex
-  * tetrahedron: 3-simplex
-  
- * Point: position in space (x,y) in two dimensions (x,y,z) in three dimensions.
- * Segment: figure bounded by two point.
- * Polygon: figure bounded by a finite number of segment.
- * facet:
- * Cell: volume bounded by a finite number of facet.
  
 ## Entity
 
 ## Notion
- * Topology: the connectivity and organization of the entity that compose a system. 
+ * Topology - Connectivity information between the entities that compose a GeoModel. 
