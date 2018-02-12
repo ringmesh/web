@@ -108,7 +108,7 @@ the project `SUPERBUILD.sln`.
  * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
  * Build the solution.
  
-All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository : `RINGMesh_root/build/ringmesh`.
+All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository: `RINGMesh_root/build/ringmesh`.
 
  * Open the project `RINGMesh.sln`.
  * Build the solution. 
