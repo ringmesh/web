@@ -6,9 +6,9 @@ This page gives definitions of the words commonly used in the RINGMesh project.
  * Point - A position in space: (x,y) in 2D or (x,y,z) in 3D.
  * Segment - Part of a line bounded by two distinct points.
  * Polygon - Part of a plane bounded by a finite number of non-intersecting segments closing in a loop.
- * Polyhedron - Part of a space bounded by a finite number of non_intersecting polygons defining an interior and an exterior.
+ * Polyhedron - Part of a space bounded by a finite number of non-intersecting polygons defining an interior and an exterior.
  
- * N-simplex - the convex-hull of N+1 points
+ * N-simplex - The convex-hull of N+1 points
    * Point: 0-simplex
    * Segment: 1-simplex
    * Triangle: 2-simplex
@@ -21,7 +21,7 @@ This page gives definitions of the words commonly used in the RINGMesh project.
  * Mesh edge - A segment of a linear mesh.
  * Vertex - A corner point of a mesh cell, a mesh polygon or a mesh edge.
  
- * Facet - A (n-1) boundary of a mesh element
+ * Facet - A (N-1) boundary of a mesh element
    * A face of a mesh cell
    * An edge of a mesh polygon
    * A vertex of a mesh edge
