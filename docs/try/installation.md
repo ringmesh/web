@@ -1,11 +1,9 @@
 # Configuration and compilation
 
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
-You will need:
- * CMake (version >= 3.1)
- * gcc/g++ version higher or equal to 4.8
- There is no other dependency (everything you need is shipped with RINGMesh). 
- Follow the Linux, Mac OS or Windows instructions below.
+You will need CMake (version >= 3.1) to configure it.
+There is no other dependency (everything you need is shipped with RINGMesh). 
+Follow the Linux, Mac OS or Windows instructions below.
 
 To clone RINGMesh you need Git (https://git-scm.com/).
 Make sure that Git binary directory is in your computer path (environment variable).
