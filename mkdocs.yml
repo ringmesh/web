@@ -20,8 +20,8 @@ pages:
     - Features:
         - 'GeoModel': features/geomodel.md
         - 'Mesh': features/mesh.md
+        - 'Validity': features/validity.md
         - 'Supported file formats': features/file_formats.md
-        - 'Viewer': features/viewer.md
     - Gallery: gallery.md
     - Download: download.md
     - About: about.md

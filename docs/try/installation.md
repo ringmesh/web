@@ -1,8 +1,9 @@
 # Configuration and compilation
 
 RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
-You will need CMake (version >= 3.1). There is no other dependency (everything
-you need is shipped with RINGMesh). Follow the Linux, Mac OS or Windows instructions below.
+You will need CMake (version >= 3.1) to configure it.
+There is no other dependency (everything you need is shipped with RINGMesh). 
+Follow the Linux, Mac OS or Windows instructions below.
 
 To clone RINGMesh you need Git (https://git-scm.com/).
 Make sure that Git binary directory is in your computer path (environment variable).
@@ -36,8 +37,6 @@ To define the options, use the cmake interface
 ```bash
 cmake-gui .. or ccmake ..
 ```
- Note: Configuration options can also be edited by creating a `UserConfig.cmake` file from a `DefaultConfig.cmake` file
- in the cmake folder.
 
 ### Compiling RINGMesh
 
@@ -53,11 +52,13 @@ Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to
 
 ### Generating the documentation
 
-If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation using the following command:
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. 
+You can generate the documentation using the following command in the `RINGMesh_root/build/config` directory:
 
 ```bash
 make doc-devkit
 ```
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/config/ringmesh/devkit/html/index.html`
 
 ### Troubleshooting
 
@@ -87,16 +88,14 @@ Eclipse: File>Import...>General>Existing Projects into Workspace.
  * Set the Configuration options using the CMake GUI interface.
  * Launch the `configure`and `generate` option.
 
- Note: Configuration options can also be given by creating a `UserConfig.cmake` file in the cmake folder.
-
 RINGMesh compiles with the following Visual Studio version:
 
 * Visual Studio 12 2013 Win64
 * Visual Studio 14 2015 Win64
 * Visual Studio 15 2017 Win64
 
-Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for VisualStudio through the 
-VisualStudio installer.
+Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for Visual Studio through the 
+Visual Studio installer.
 
 
 ### Compiling RINGMesh
@@ -107,7 +106,7 @@ the project `SUPERBUILD.sln`.
  * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
  * Build the solution.
  
-All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created.
+All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository: `RINGMesh_root/build/ringmesh`.
 
  * Open the project `RINGMesh.sln`.
  * Build the solution. 
@@ -118,16 +117,15 @@ The available compilation modes are:
 * Debug
 * RelWithDebInfo 
 
-Note: The compilation mode `RelWithDebInfo` is mandatory to run a Gocad plugin in Debug mode with Gocad
-  in Release, there are issues between libraries in Debug linked to a Gocad plugin.
+Note: Visual Studio has on pile per configuration mode. You must link consistently with the expected configuration mode.
 
 ### Compiling the documentation
 
-* Check the BUILD_DOCUMENTATION option during the configuration of RINGMesh with cmake
-* Open the solution which is in build/RINGMesh.sln in VisualStudio
-* Build the doc-devkit
+If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation by:
+* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in Visual Studio
+* Building the doc-devkit
 
-See the documentation section for more details.
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\ringmesh\devkit\html\index.html`
 
 ## Mac OS
 
