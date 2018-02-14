@@ -27,11 +27,11 @@ This page gives definitions of the words commonly used in the RINGMesh project.
    * A vertex of a mesh edge
 
 ## Mesh: Set of elements 
- * Structured mesh - A mesh characterized by a regular connectivity between elements.
- * Unstructured mesh - A mesh characterized by an irregular connectivity between elements.
+ * Structured mesh - A mesh with regular connectivity meaning that each vertex is connected to the same number of vertices.
+ * Unstructured mesh - A mesh with any connectivity between vertices.
  
  
 ## Entity
 
 ## Notion
- * Topology - Connectivity information between the entities that compose a GeoModel. 
+ * Topology - Connectivity information between entities. 
