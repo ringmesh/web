@@ -1,7 +1,7 @@
 # Validate your GeoModel with RINGMesh!
 
 "Validity" is a complex and non-unique notion that often depends on application requirements of the 
-tools you used to solve a particular problem. Considering that, RINGMesh propvides a set of checks to ensure:
+tools you used to solve a particular problem. Considering that, RINGMesh provides a set of checks to ensure:
 
 1. the topological and geometrical "validity" of each `GeoModel` entities (both geometrical and geological); 
 1. the "validity" of the `GeoModel` itself.
@@ -34,7 +34,7 @@ We check if the relationships between the geological entities are consistent by 
 ## GeoModel geometry validation
 
 ### Classic geometric checks
-We ensure some minimal requieremnts on the geometry:
+We ensure some minimal requirements on the geometry:
 
  1. no degenerated mesh element;
  1. a geometrical `Entity` is composed by a unique connected component;
@@ -45,9 +45,9 @@ We ensure some minimal requieremnts on the geometry:
 ### Conformity between geometrical entity meshes (TODO: Figure)
 The conformity is checked following these properties:
 
- 1. between `Lines` and their `Corners` boundary: the vertex of corner is a vertex on the border of incident `Line`;
+ 1. between `Lines` and their `Corners` boundary: the vertex of corner is a vertex on the border of incident `Lines`;
  1. between `Surfaces` and their `Lines` boundary: all the vertices and all the edges of a `Line` are also vertices and edges on the border of incident `Surfaces`;
- 1. between `Regions` and their `Surfaces` boundary: all the vertices and all the edges and all the polygons of a `Surface` are also vertices, edges and cell facets on the border of incident `Region`.
+ 1. between `Regions` and their `Surfaces` boundary: all the vertices and all the edges and all the polygons of a `Surface` are also vertices, edges and cell facets on the border of incident `Regions`.
     
 ## RINGMesh conventions
 
