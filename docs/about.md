@@ -18,12 +18,14 @@
 
 ## Publications
 
+### 2018
+Chauvin et al., [Validating novel boundary conditions for three-dimensional mechanics-based restoration: An extensional sandbox model example](https://hal.univ-lorraine.fr/hal-01708097/document),
+_AAPG Bulletin_, v. 102, no. 2, p. 245-266, doi: [10.1306/0504171620817154](http://archives.datapages.com/data/bulletns/2018/02feb/BLTN17154/bltn17154.html).
+
 ### 2017
 Pellerin et al., [RINGMesh: A programming library for developing mesh-based geomodeling applications.](https://hal.archives-ouvertes.fr/hal-01493204/document),
-_Computers & Geosciences, 104_ pp.93-100.
+_Computers & Geosciences_, v. 104, p. 93-100, doi: [10.1016/j.cageo.2017.03.005](https://www.sciencedirect.com/science/article/pii/S0098300417302637?via%3Dihub).
 
-Chauvin et al., [Defining Proper Boundary Conditions in 3-D Structural Restoration: A Case Study Restoring a 3-D Forward Model of Suprasalt Extensional Structures](http://archives.datapages.com/data/bulletns/aop/2017-05-22/aapgbltn17154aop.html),
-_AAPG Bulletin_
 
 ## Licence
 
@@ -74,6 +76,7 @@ FRANCE
       pages={93--100},
       year={2017},
       publisher={Elsevier},
+      doi={10.1016/j.cageo.2017.03.005},
       url={https://ringmesh.ring-team.org}
         }
 ```
