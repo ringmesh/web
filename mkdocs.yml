@@ -27,7 +27,7 @@ pages:
     - Download: download.md
     - About: about.md
 
-copyright: Copyright &copy; 2017, Association Scientifique pour la Géologie et ses Applications <a href="http://asgageol.univ-lorraine.fr/">(ASGA)</a>
+copyright: Copyright &copy; 2018, Association Scientifique pour la Géologie et ses Applications <a href="http://asgageol.univ-lorraine.fr/">(ASGA)</a>
 theme:
     name: null
     custom_dir: ringmesh_theme
