@@ -13,10 +13,12 @@ pages:
     - '_Home': index.md
     - 'Try !':
         - 'Try online': try/try_online.md
-        - 'Installation': try/installation.md
+        - 'Get started': try/installation.md
         - 'Doxygen documentation': try/documentation.md
         - 'Tutorials': try/tutorials.md
         - '_Geomodel Basics': try/tutorials/geomodel/geomodel-basics.md
+        - '_Configure Compile': try/tutorials/configure_compile_ringmesh.md
+
     - Features:
         - 'GeoModel': features/geomodel.md
         - 'Mesh': features/mesh.md
