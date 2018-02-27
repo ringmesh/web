@@ -65,4 +65,4 @@ Here is the command syntax:
 
     ringmesh-convert in:geomodel=/path/to/your/file.ext1 out:geomodel=/where/you/want/to/save/file.ext2
 
-Note: to generate and compile this executable, you should select the option `RINGMESH_WITH_UTILIES` in the cmake configuration options.
+Note: to generate and compile this executable, you should select the option `RINGMESH_WITH_UTILITIES` in the cmake configuration options.
