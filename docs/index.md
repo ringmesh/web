@@ -20,7 +20,7 @@ More details available in the features section.
 **Latest Release**
 </button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
 
-For older releases see the [download](download.md) section.
+See the [download](download.md) section for other versions and pre-compiled packages.
 </div>
 
 <div class="col-md-6" features markdown="1">
@@ -33,6 +33,7 @@ _The SEG/EAGE Overthrust model._
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Feb 22, 2018 | Presentation of RINGMesh at the 4th meeting of the European 3D GeoModelling Community in Orléans.
 Nov 20, 2017 | New RINGMesh website !
 
 ## Contact
