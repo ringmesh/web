@@ -13,7 +13,7 @@ The source code is available by:
  
 ### Configure and compile the source Code
 
-RingMesh is tested under:
+RINGMesh is tested under:
 
  * Linux (64bits)
  * Windows (64 bits)
