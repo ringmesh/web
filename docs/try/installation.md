@@ -6,10 +6,11 @@
 
 The source code is available by:
 
- 1. cloning the directory from GitHub
- 1. downloading Source archives (Released or lining) 
+ 1. cloning the directory from [GitHub](https://github.com/ringmesh/RINGMesh)
+ 1. downloading an archive of the sources ([Releases(https://github.com/ringmesh/RINGMesh/releases) 
+ or [latest developments](https://github.com/ringmesh/RINGMesh/archive/master.zip)) 
  
- Please follow the instructions of the [Download](/download) section. 
+ For more information, please follow the instructions of the [Download](/download) section. 
  
 ### Configure and compile the source Code
 
@@ -27,10 +28,9 @@ Pre-compiled packages are available in the [Download](/download) section.
 After having downloaded the archive that correspond to your operating system, 
 please extract the files in the folder where you want to use it.
 
-
 ## Develop with RINGMesh
 
-RINGMesh is a classical library that provide an API with functions that can be used in an external project.
+RINGMesh is a library that provide a development API with functions that can be used in an external project.
 We provide an example of a project that set the dependency with RINGMesh and use some functions from the RINGMesh API.
 
 Please Look at the [RINGMesh Plugin example on GitHub](https://github.com/ringmesh/RINGMeshPluginExample).
