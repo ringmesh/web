@@ -1,4 +1,19 @@
-# Configure and Compile the RNGMesh source code
+# Configure and Compile the RINGMesh source code
+
+## RINGMesh Configuration options
+RINGMesh comes with a CMake configuration file. Several options can be selected in order to build the project that feet your needs:
+
+ * `BUILD_GEOGRAM_WITHOUT_EXE`: RINGMesh build the GEOGRAM project. This option allow to build the GEOGRAM libraries used in RINGMesh
+ without building executable from GEOGRAM.
+ * `BUILD_RINGMESH_VIEW`: Build the viewer to visualize the GeoModel data structure.
+ * `RINGMESH_WITH_GRAPHICS`: Build graphical libraries of RINGMesh and GEOGRAM.
+ * `RINGMESH_WITH_TESTS`: Build the RINGMesh test environment.
+ * `RINGMESH_WITH_TETGEN`: Build the [TetGen](http://wias-berlin.de/software/index.jsp?id=TetGen&lang=1) wrapper library. 
+ This option provides functionalities to mesh and re-mesh volume and surfaces with TetGen. Please make sure that you respect the 
+ [AGPLv3 license](http://www.gnu.org/licenses/agpl-3.0.en.html) before checking that option.
+ * `RINGMESH_WITH_TUTORIALS`: Build the tutorial environment.
+ * `RINGMESH_WITH_UTILITIES`: Build all executable corresponding to RINGMesh utilities.
+ 
 ## Linux configure and compile
 
 ### Toolbox
