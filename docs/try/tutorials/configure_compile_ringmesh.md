@@ -23,14 +23,22 @@ RINGMesh comes with a CMake configuration file. Several options can be selected 
  * gcc/g++ (version >= 4.8; C++11 support)
 
 #### Other dependencies
-To compile you need the following packages (on Debian-based linux and essentially for graphics option):
- * build-essential
- * libx11-dev
- * libxrandr-dev
- * libxinerama-dev
- * libxcursor-dev
- * freeglut3-dev
- * libxi-dev
+To compile the graphical libraries of RINGMesh (more precisely of Geogram),
+you need to install the development package of:
+
+ * [X11](https://www.x.org)
+ * [XRandR](https://www.x.org/wiki/Projects/XRandR/)
+ * [Xinerama](https://sourceforge.net/projects/xinerama/files/)
+ * [Xcursor](https://www.x.org)
+ * [FreeGlut](http://freeglut.sourceforge.net/)
+ * [X Input Extension](https://www.x.org)
+
+The command line under Debian-based OS to install all the necessary packages to
+compile RINGMesh is:
+```
+    sudo apt-get install build-essential libx11-dev libxrandr-dev libxinerama-dev
+	libxcursor-dev freeglut3-dev libxi-dev
+```
 
 #### Optional tools
  * [Eclipse-cdt](http://www.eclipse.org/cdt/)
