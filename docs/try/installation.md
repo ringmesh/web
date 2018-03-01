@@ -1,159 +1,69 @@
-# Configuration and compilation
+# Get Started with RINGMesh
 
-RINGMesh is tested under Linux (64 bits) and Windows (64 bits).
-You will need CMake (version >= 3.1) to configure it.
-There is no other dependency (everything you need is shipped with RINGMesh). 
-Follow the Linux, Mac OS or Windows instructions below.
+## About the source code
 
-To clone RINGMesh you need Git (https://git-scm.com/).
-Make sure that Git binary directory is in your computer path (environment variable).
-Under Windows, after installing Git you should have in your path environment variable:
-C:\Program Files\Git\cmd.
-Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.
+### Download the source Code
 
-You can clone RINGMesh using:
+The source code is available by:
 
-```
-git clone https://github.com/ringmesh/RINGMesh/
-```
-
-## Linux
-
-
-### Configuring RINGMesh
-
-Execute cmake command in a RINGMesh/build directory.
-
-```bash
-mkdir build
-cd build
-```
-To configure using default options:
-```bash
-cmake ..
-```
-To define the options, use the cmake interface
-
-```bash
-cmake-gui .. or ccmake ..
-```
-
-### Compiling RINGMesh
-
-To compile RINGMesh, go to RINGMesh root directory and:
-
-```bash
-cd build/Release
-make
-```
-To build in debug, go to build/Debug instead.
-
-Note: RINGMesh uses C++ 11 features. You need gcc/g++ version higher or equal to 4.8 to compile it.
-
-### Generating the documentation
-
-If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. 
-You can generate the documentation using the following command in the `RINGMesh_root/build/config` directory:
-
-```bash
-make doc-devkit
-```
-Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/config/ringmesh/devkit/html/index.html`
-
-### Troubleshooting
-
-If you get this error during geogram gfx compilation (occured for Ubuntu 17.04):
-```
-No rule to make target '/usr/lib/x86_64-linux-gnu/libGL.so'
-```
-you can try under root:
-```bash
-rm /usr/lib/x86_64-linux-gnu/libGL.so
-ln -s /usr/lib/libGL.so.1 /usr/lib/x86_64-linux-gnu/libGL.so
-```
-### Additionnal information
-
-#### Eclipse-cdt project
-[Eclipse-cdt](http://www.eclipse.org/cdt/)
-project is provided (.project and .cproject). You can import RINGMesh into
-Eclipse: File>Import...>General>Existing Projects into Workspace.
-
-## Windows
-
-### Configuring RINGMesh
-
- * Launch CMake GUI interface. 
- * Indicate where is the source code as the path to RINGMesh root and where to put the binaries as 
- `RINGMesh_root/build`.
- * Set the Configuration options using the CMake GUI interface.
- * Launch the `configure`and `generate` option.
-
-RINGMesh compiles with the following Visual Studio version:
-
-* Visual Studio 12 2013 Win64
-* Visual Studio 14 2015 Win64
-* Visual Studio 15 2017 Win64
-
-Note: RINGMesh uses C++11 features. Make sure that you have installed C++ package for Visual Studio through the 
-Visual Studio installer.
-
-
-### Compiling RINGMesh
-
-RINGMesh need several third parties that are automatically compiled and installed by compiling 
-the project `SUPERBUILD.sln`.
-
- * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
- * Build the solution.
+ 1. cloning the directory from [GitHub](https://github.com/ringmesh/RINGMesh)
+ 1. downloading an archive of the sources ([Releases(https://github.com/ringmesh/RINGMesh/releases) 
+ or [latest developments](https://github.com/ringmesh/RINGMesh/archive/master.zip)) 
  
-All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository: `RINGMesh_root/build/ringmesh`.
+ For more information, please follow the instructions of the [Download](/download) section. 
+ 
+### Configure and compile the source Code
 
- * Open the project `RINGMesh.sln`.
- * Build the solution. 
+RINGMesh is tested under:
 
-The available compilation modes are:
+ * Linux (64bits)
+ * Windows (64 bits)
+ * Mac OS (64 bits)
 
-* Release
-* Debug
-* RelWithDebInfo 
+Please find the corresponding instruction in the [configure and compile tutorial](/try/tutorials/configure_compile_ringmesh). 
 
-Note: Visual Studio has on pile per configuration mode. You must link consistently with the expected configuration mode.
+## About pre-compiled packages
 
-### Compiling the documentation
+Pre-compiled packages are available in the [Download](/download) section.
+After having downloaded the archive that correspond to your operating system, 
+please extract the files in the folder where you want to use it.
 
-If Doxygen is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation by:
-* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in Visual Studio
-* Building the doc-devkit
+## Develop with RINGMesh
 
-Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\ringmesh\devkit\html\index.html`
+RINGMesh is a library that provide a development API with functions that can be used in an external project.
+We provide an example of a project that set the dependency with RINGMesh and use some functions from the RINGMesh API.
 
-## Mac OS
+Please Look at the [RINGMesh Plugin example on GitHub](https://github.com/ringmesh/RINGMeshPluginExample).
 
-### Configuring RINGMesh
+Once your project is started, you can follow some [tutorials](/try/tutorials) to learn more about the RINGMesh API.
 
-#### Using clang (without Xcode)
-As in Linux.
+## RINGMesh Utilities 
 
-#### Using Xcode IDE
-As in Windows but with the Xcode generator
-(use "-G Xcode" if you use cmake in command lines).
+To access the utilities RINGMesh needs to be configured and compiled with the corresponding option.
+If you did not check that option during the configuration using CMake please go back to the 
+[configure and compile tutorial](/try/tutorials/configure_compile_ringmesh) and select the `RINGMESH_WITH_UTILITIES` option.
+Pre-compiled packages have been built with the `RINGMESH_WITH_UTILITIES` option. 
 
-### Compiling RINGMesh
-You need to install the Mac OS "Command Line Developer Tools".
+After building RINGMesh with utilities a set of executable is generated and can be executed from the RINGMesh install directory:
 
-Note: you need gcc/g++ version higher or equal to 4.2 to compile RINGMesh.
-In Mac OS, clang is used.
+ * Window: `RINGMesh\build\ringmesh\bin\CONFIG\**.exe`
+ * Linux: `RINGMesh\build\ringmesh\CONFIG\bin\**.exe`
+  
+Here is the list of the RINGMesh utilities:
 
-#### Using clang (without Xcode)
-As in Linux except for the packages.
-
-#### Using Xcode IDE
-You need to install Xcode IDE.
-Open the build/ringmesh/RINGMesh.xcodeproj with Xcode IDE,
-and then compile (as in Windows with VisualStudio).
-Or use these command lines:
-```
-cd build/ringmesh
-xcodebuild -project RINGMesh.xcodeproj -alltargets -configuration Release
-```
-To build in Debug, replace "Release" by "Debug" after "-configuration".
+ * `ringmesh-convert`: Load a GeoModel, check its validity and export GeoModel. 
+ Supported input and output file formats are listed [here](/features/file_formats). 
+ Performed validity checks performed are explained [here](/features/validity).
+ * `ringmesh-edit-infos`: Edit information of a GeoModel (such as its name) and save this change in the same file (overwrite) or another one.
+ * `ringmesh-mesh-quality`: Load a GeoModel and compute its cell quality. 
+ Several metrics are available and the results are stored as an Attribute on each cell.
+ Warning: this is only applicable on GeoModel with Regions meshed with tetrahedra.
+ * `ringmesh-repair`: Load a Geomodel and repair some basic issues such as geometrical issues on meshes (duplicated vertices, degenerated mesh elements).
+ * `ringmesh-rotate`: Load and rotate a GeoModel using a reference frame and an angle.
+ * `ringmesh-stats`: Load and print statistics on number of entities, and mesh elements in the GeoModel.
+ * `ringmesh-surface-convert`: Load a set of TSurfs (Gocad file format) and output a set on triangulated surfaces 
+ into a file format supported by GEOGRAM.
+ * `ringmesh-tetrahedralize`: Load a boundary representation (B-Rep) and fill its Regions with tetrahedra using TetGen or another mesher.
+ * `ringmesh-translate`: Load and translate a GeoModel using a 3D vector.
+ 
+A description of both functionalities and input parameters is displayed while launching the executable.
