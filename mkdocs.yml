@@ -14,7 +14,7 @@ pages:
     - 'Try !':
         - 'Try online': try/try_online.md
         - 'Installation': try/installation.md
-        - 'Doxygen documentation': http://www.ring-team.org/ring_dl/public/software/ringmesh/doc/
+        - 'Doxygen documentation': try/documentation.md
         - 'Tutorials': try/tutorials.md
         - '_Geomodel Basics': try/tutorials/geomodel/geomodel-basics.md
     - Features:
