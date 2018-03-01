@@ -5,7 +5,7 @@ RINGMesh proposes an home-made file format with the `.gm` extension to read and 
 
 Beyond that, RINGMesh provides an extensible design to ease your possibility to add new file formats. We present here an exhaustive list 
 of input and output file formats currently supported by RINGMesh. These file formats are different if you are dealing with GeoModels in 3D 
-or if you are dealing with a cross section of a GeoModels in 2D.
+or if you are dealing with a 2D cross section of a GeoModel (called `GeoModel2D`).
 
 ## Input/Output GeoModels in 3D
 
@@ -37,7 +37,7 @@ or if you are dealing with a cross section of a GeoModels in 2D.
 | .smesh             | Smesh           |
 | .stl               |                 |
 
-## Input/Output GeoModels cross section in 2D 
+## Input/Output GeoModel cross section in 2D 
 
 ### Inputs GeoModel2D
 
