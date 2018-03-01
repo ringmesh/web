@@ -45,7 +45,7 @@ or if you are dealing with a 2D cross section of a GeoModel (called `GeoModel2D`
 | -------------      | -------------   |
 | .gm                | RINGMesh        |
 | .model             | Stradivarius    |
-| .svg               | Inkscape        |
+| .svg               |         |
 | .msh (in progress) | GMSH            |
 
 ### Outputs GeoModel2D
