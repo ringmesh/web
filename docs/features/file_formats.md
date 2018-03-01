@@ -3,21 +3,13 @@
 The GeoModel is the Data Model powered by RINGMesh (see the full description of the GeoModel [here](/features/geomodel).
 RINGMesh proposes an home-made file format with the `.gm` extension to read and write GeoModels.
 
-Beyond that, RINGMesh is able to deal with various file formats. We present here an exhaustive list of input and output file formats
-supported by RINGMesh. These file formats are different if you are dealing with 2D or 3D GeoModels. RINGMesh provides an extensible design to ease your possibility to add new file formats.
+Beyond that, RINGMesh provides an extensible design to ease your possibility to add new file formats. We present here an exhaustive list 
+of input and output file formats currently supported by RINGMesh. These file formats are different if you are dealing with GeoModels in 3D 
+or if you are dealing with a cross section of a GeoModels in 2D.
 
-## Input 
+## Input/Output GeoModels in 3D
 
-### GeoModel2D 
-
-| Extension          |     Software    | 
-| -------------      | -------------   |
-| .gm                | RINGMesh        |
-| .model             | Stradivarius    |
-| .svg               |                 |
-| .msh (in progress) | GMSH            |
-
-### GeoModel3D
+### Inputs GeoModel3D
 
 | Extension          |     Software    |
 | -------------      | -------------   |
@@ -27,18 +19,7 @@ supported by RINGMesh. These file formats are different if you are dealing with 
 | .msh (in progress) | GMSH            |
 
 
-## Output
-
-### GeoModel2D
-
-| Extension          |     Software    |
-| -------------      | -------------   |
-| .gm                | RINGMesh        |
-| .mfem              | MFEM            |
-| .msh (in progress) | GMSH            |
-
-
-### GeoModel3D
+### Outputs GeoModel3D
 
 | Extension          |     Software    |
 | -------------      | -------------   |
@@ -56,6 +37,24 @@ supported by RINGMesh. These file formats are different if you are dealing with 
 | .smesh             | Smesh           |
 | .stl               |                 |
 
+## Input/Output GeoModels cross section in 2D 
+
+### Inputs GeoModel2D
+
+| Extension          |     Software    | 
+| -------------      | -------------   |
+| .gm                | RINGMesh        |
+| .model             | Stradivarius    |
+| .svg               | Inkscape        |
+| .msh (in progress) | GMSH            |
+
+### Outputs GeoModel2D
+
+| Extension          |     Software    |
+| -------------      | -------------   |
+| .gm                | RINGMesh        |
+| .mfem              | MFEM            |
+| .msh (in progress) | GMSH            |
 
 ## Conversion
 

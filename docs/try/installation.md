@@ -67,5 +67,3 @@ Here is the list of the RINGMesh utilities:
  * `ringmesh-translate`: Load and translate a GeoModel using a 3D vector.
  
 A description of both functionalities and input parameters is displayed while launching the executable.
-
-## RINGMesh View 
