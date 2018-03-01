@@ -39,6 +39,8 @@ Find all RINGMesh Release on [GitHub](https://github.com/ringmesh/RINGMesh/relea
 ## Download pre-compiled packages
 ### Unreleased Developments
 
+Packages are built with graphics and utilities (see [configuration options](/try/tutorials/configure_compile_ringmesh)).
+
 <div class="horizontal_expand" markdown="1">
 <div>
 [<button type="button" class="btn btn-success">
