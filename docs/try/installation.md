@@ -39,32 +39,32 @@ Once your project is started, you can follow some [tutorials](/try/tutorials) to
 
 ## RINGMesh Utilities 
 
-To access the utilities RINGMesh need to be configured and compiled with the corresponding option.
+To access the utilities RINGMesh needs to be configured and compiled with the corresponding option.
 If you did not check that option during the configuration using CMake please go back to the 
 [configure and compile tutorial](/try/tutorials/configure_compile_ringmesh) and select the `RINGMESH_WITH_UTILITIES` option.
 Pre-compiled packages have been built with the `RINGMESH_WITH_UTILITIES` option. 
 
-After building RINGMesh with utilities a set of executable are generated and can be execute from the RINGMesh install directory:
+After building RINGMesh with utilities a set of executable is generated and can be executed from the RINGMesh install directory:
 
  * Window: `RINGMesh\build\ringmesh\bin\CONFIG\**.exe`
  * Linux: `RINGMesh\build\ringmesh\CONFIG\bin\**.exe`
   
 Here is the list of the RINGMesh utilities:
 
- * ringmesh-convert: load a GeoModel, check its validity and export GeoModel. 
- Supported input and output file format are listed [here](/features/file_formats). 
- Validity checks performed are explained [here](/features/validity).
- * ringmesh-edit-infos: Edit information of a GeoModel (such as its name) and save this change in the same file (overwrote) or another one.
- * ringmesh-mesh-quality: load a GeoModel and compute its cell quality. 
- Several metrics is available and the results is stored as an Attribute on each cell.
+ * `ringmesh-convert`: Load a GeoModel, check its validity and export GeoModel. 
+ Supported input and output file formats are listed [here](/features/file_formats). 
+ Performed validity checks performed are explained [here](/features/validity).
+ * `ringmesh-edit-infos`: Edit information of a GeoModel (such as its name) and save this change in the same file (overwrite) or another one.
+ * `ringmesh-mesh-quality`: Load a GeoModel and compute its cell quality. 
+ Several metrics are available and the results are stored as an Attribute on each cell.
  Warning: this is only applicable on GeoModel with Regions meshed with tetrahedra.
- * ringmesh-repair: load a Geomodel and repair some basic issues such as geometrical issues on meshes (duplicated vertices, degenerated mesh elements).
- * ringmesh-rotate: Load and rotate a GeoModel using a reference frame and an angle.
- * ringmesh-stats: Load and print statistics on number of entities, and mesh elements in the GeoModel.
- * ringmesh-surface-convert: Load a set of TSurfs (Gocad file format) and output a set on triangulated surfaces 
+ * `ringmesh-repair`: Load a Geomodel and repair some basic issues such as geometrical issues on meshes (duplicated vertices, degenerated mesh elements).
+ * `ringmesh-rotate`: Load and rotate a GeoModel using a reference frame and an angle.
+ * `ringmesh-stats`: Load and print statistics on number of entities, and mesh elements in the GeoModel.
+ * `ringmesh-surface-convert`: Load a set of TSurfs (Gocad file format) and output a set on triangulated surfaces 
  into a file format supported by GEOGRAM.
- * ringmesh-tetrahedralize: Load a boundary representation (B-Rep) and fill its Regions with tetrahedra using TetGen or another mesher.
- * ringmesh-translate: Load and translate a GeoModel using a 3D vector.
+ * `ringmesh-tetrahedralize`: Load a boundary representation (B-Rep) and fill its Regions with tetrahedra using TetGen or another mesher.
+ * `ringmesh-translate`: Load and translate a GeoModel using a 3D vector.
  
 A description of both functionalities and input parameters is displayed while launching the executable.
 

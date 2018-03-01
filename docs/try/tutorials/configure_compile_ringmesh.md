@@ -1,7 +1,7 @@
-# Configure and Compile the RINGMesh source code
+# Configure and compile RINGMesh source code
 
 ## RINGMesh Configuration options
-RINGMesh comes with a CMake configuration file. Several options can be selected in order to build the project that feet your needs:
+RINGMesh comes with a CMake configuration file. Several options can be selected in order to build the project that fits your needs:
 
  * `BUILD_GEOGRAM_WITHOUT_EXE`: RINGMesh build the GEOGRAM project. This option allow to build the GEOGRAM libraries used in RINGMesh
  without building executable from GEOGRAM.
@@ -14,13 +14,23 @@ RINGMesh comes with a CMake configuration file. Several options can be selected 
  * `RINGMESH_WITH_TUTORIALS`: Build the tutorial environment.
  * `RINGMESH_WITH_UTILITIES`: Build all executable corresponding to RINGMesh utilities.
  
-## Linux configure and compile
+## Linux configuration and compilation
 
 ### Toolbox
 
 #### Mandatory tools
  * CMake (version >= 3.1)
  * gcc/g++ (version >= 4.8; C++11 support)
+
+#### Other dependencies
+To compile you need the following packages (on Debian-based linux and essentially for graphics option):
+ * build-essential
+ * libx11-dev
+ * libxrandr-dev
+ * libxinerama-dev
+ * libxcursor-dev
+ * freeglut3-dev
+ * libxi-dev
 
 #### Optional tools
  * [Eclipse-cdt](http://www.eclipse.org/cdt/)
@@ -32,7 +42,7 @@ There is no other dependency (everything you need is shipped with RINGMesh).
 
 ### Configuring RINGMesh
 
-Execute cmake (version >= 3.1) command in a `RINGMesh/build` directory.
+Execute cmake command in a `RINGMesh/build` directory.
 
 ```bash
 mkdir build

@@ -3,8 +3,8 @@
 The GeoModel is the Data Model powered by RINGMesh (see the full description of the GeoModel [here](/features/geomodel).
 RINGMesh proposes an home-made file format with the `.gm` extension to read and write GeoModels.
 
-Beyond that, RINGMesh is able to deal with various file format. We present here an exhaustive list of input and output file format
-supported by RINGMesh. These file format are different if you are dealing with 2D or 3D GeoModels.
+Beyond that, RINGMesh is able to deal with various file formats. We present here an exhaustive list of input and output file formats
+supported by RINGMesh. These file formats are different if you are dealing with 2D or 3D GeoModels. RINGMesh provides an extensible design to ease your possibility to add new file formats.
 
 ## Input 
 
@@ -14,7 +14,7 @@ supported by RINGMesh. These file format are different if you are dealing with 2
 | -------------      | -------------   |
 | .gm                | RINGMesh        |
 | .model             | Stradivarius    |
-| .svg               | Inkscape        |
+| .svg               |                 |
 | .msh (in progress) | GMSH            |
 
 ### GeoModel3D
@@ -48,7 +48,7 @@ supported by RINGMesh. These file format are different if you are dealing with 2
 | .msh               | GMSH            |
 | .tetgen            | TetGen          |
 | .csmp              | CSMP++          |
-| .vtk               | ParView         |
+| .vtk               | ParaView        |
 | .mfem              | MFEM            |
 | .inp               | Abaqus          |
 | .adeli             | Adeli           |
