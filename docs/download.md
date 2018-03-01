@@ -1,12 +1,43 @@
-#Source code
+# Download RINGMesh
 
-RINGMesh is an open-source project. 
-The code can be found on [GitHub](https://github.com/ringmesh/RINGMesh).
-Please, create a fork to edit the code or use the GitHub [issue tracker](https://github.com/ringmesh/RINGMesh/issues) to ask any questions or report bugs.
+RINGMesh is available under two different packages:
 
-# Packages
+ 1. Source code packages. Please follow [configuration and compilation procedure](http://www.ringmesh.org/try/installation).
+ 1. Pre-compiled packages. If your system is compatible you can extract files from the archive and 
+ [use RINGMesh directly](http://www.ringmesh.org/try/installation).
 
-## Current development
+## Download the source code
+### Unreleased Developments
+#### Living archive (current state of project)
+
+[<button type="button" class="btn btn-success">
+**Latest Developments**
+</button>](https://github.com/ringmesh/RINGMesh/archive/master.zip)
+
+#### Clone the source code from GitHub
+
+ The project is hosted on the GitHub platform: [https://github.com/ringmesh/RINGMesh](https://github.com/ringmesh/RINGMesh). 
+ 
+ You can clone RINGMesh using:
+
+	git clone https://github.com/ringmesh/RINGMesh/
+	
+ To clone RINGMesh you need Git (https://git-scm.com/). Make sure that Git binary directory is in your computer path 
+ (environment variable). Under Windows, after installing Git you should have in your path environment variable: 
+ C:\Program Files\Git\cmd. Warning: TortoiseGit (https://tortoisegit.org/) does not install Git.
+ 
+
+
+### Latest Release
+[<button type="button" class="btn btn-success">
+**Latest Release**
+</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
+
+### Other Releases
+Find all RINGMesh Release on [GitHub](https://github.com/ringmesh/RINGMesh/releases).
+
+## Download pre-compiled packages
+### Unreleased Developments
 
 <div class="horizontal_expand" markdown="1">
 <div>

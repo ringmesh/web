@@ -1,22 +1,15 @@
 # Input and Output file formats
 
-For saving and loading a GeoModel, RINGMesh proposes an home-made file format with the extension `.gm` for GeoModel.
-Moreover, RINGMesh offers the possibility to import and export GeoModels from other kinds of file formats.
+The GeoModel is the Data Model powered by RINGMesh (see the full description of the GeoModel [here](/features/geomodel).
+RINGMesh proposes an home-made file format with the `.gm` extension to read and write GeoModels.
 
-You will find below the list of input and output file format RINGMesh can read/write for GeoModel in 2D and 3D.
+Beyond that, RINGMesh provides an extensible design to ease your possibility to add new file formats. We present here an exhaustive list 
+of input and output file formats currently supported by RINGMesh. These file formats are different if you are dealing with GeoModels in 3D 
+or if you are dealing with a 2D cross section of a GeoModel (called `GeoModel2D`).
 
-## Input 
+## Input/Output GeoModels in 3D
 
-### GeoModel2D
-
-| Extension          |     Software    |
-| -------------      | -------------   |
-| .gm                | RINGMesh        |
-| .model             | Stradivarius    |
-| .svg               | Inkscape        |
-| .msh (in progress) | GMSH            |
-
-### GeoModel3D
+### Inputs GeoModel3D
 
 | Extension          |     Software    |
 | -------------      | -------------   |
@@ -26,18 +19,7 @@ You will find below the list of input and output file format RINGMesh can read/w
 | .msh (in progress) | GMSH            |
 
 
-## Output
-
-### GeoModel2D
-
-| Extension          |     Software    |
-| -------------      | -------------   |
-| .gm                | RINGMesh        |
-| .mfem              | MFEM            |
-| .msh (in progress) | GMSH            |
-
-
-### GeoModel3D
+### Outputs GeoModel3D
 
 | Extension          |     Software    |
 | -------------      | -------------   |
@@ -47,7 +29,7 @@ You will find below the list of input and output file format RINGMesh can read/w
 | .msh               | GMSH            |
 | .tetgen            | TetGen          |
 | .csmp              | CSMP++          |
-| .vtk               | ParView         |
+| .vtk               | ParaView        |
 | .mfem              | MFEM            |
 | .inp               | Abaqus          |
 | .adeli             | Adeli           |
@@ -55,14 +37,32 @@ You will find below the list of input and output file format RINGMesh can read/w
 | .smesh             | Smesh           |
 | .stl               |                 |
 
+## Input/Output GeoModel cross section in 2D 
+
+### Inputs GeoModel2D
+
+| Extension          |     Software    | 
+| -------------      | -------------   |
+| .gm                | RINGMesh        |
+| .model             | Stradivarius    |
+| .svg               |         |
+| .msh (in progress) | GMSH            |
+
+### Outputs GeoModel2D
+
+| Extension          |     Software    |
+| -------------      | -------------   |
+| .gm                | RINGMesh        |
+| .mfem              | MFEM            |
+| .msh (in progress) | GMSH            |
 
 ## Conversion
 
-For converting a geological model from one file format to another one, 
+For converting a geological model from one file format to another, 
 you can make use of the utility executable shipped with RINGMesh: `ringmesh-convert`.
 
 Here is the command syntax:
 
     ringmesh-convert in:geomodel=/path/to/your/file.ext1 out:geomodel=/where/you/want/to/save/file.ext2
 
-Note: to generate and compile this executable, you should select the option `RINGMESH_WITH_UTILIES` in the cmake configuration options.
+Note: to generate and compile this executable, you should select the option `RINGMESH_WITH_UTILITIES` in the cmake configuration options.
