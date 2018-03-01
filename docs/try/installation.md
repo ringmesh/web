@@ -7,7 +7,7 @@
 The source code is available by:
 
  1. cloning the directory from [GitHub](https://github.com/ringmesh/RINGMesh)
- 1. downloading an archive of the sources ([Releases(https://github.com/ringmesh/RINGMesh/releases) 
+ 1. downloading an archive of the sources ([Releases](https://github.com/ringmesh/RINGMesh/releases) 
  or [latest developments](https://github.com/ringmesh/RINGMesh/archive/master.zip)) 
  
  For more information, please follow the instructions of the [Download](/download) section. 
