@@ -17,7 +17,7 @@ to feed some physical simulators and export several data structure formats.
 ## GeoModel Constitutive Elements: GeoModelEntity
 
 A model is defined by its constitutive elements `RINGMesh::GeoModelEntity`. 
-There are two main kinds of entities (Figure @fig:geomodel_entities):
+There are two main kinds of entities (see figure below):
 
  * Geometrical entities that define the geometry of the model through several dimensions:
      * Regions 
@@ -29,8 +29,10 @@ There are two main kinds of entities (Figure @fig:geomodel_entities):
     * Interfaces
     * Contacts
 
-![Geomodel entities divided into the geometrical entities and the geological entities.
-Figure from Pellerin et al. (2017).](images/geomodel_elements.svg){#fig:geomodel_entities}
+![](images/geomodel_elements.svg)
+
+*Figure: Geomodel entities divided into the geometrical entities and the geological entities.
+Figure from Pellerin et al. (2017).*
 
 We know that this is not a complete list. A lot of entities would be valuable to complete the model. 
 We strongly encourage people to contribute and complete these lists :)	
