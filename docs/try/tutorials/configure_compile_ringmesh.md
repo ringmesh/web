@@ -37,7 +37,7 @@ The command line under Debian-based OS to install all the necessary packages to
 compile RINGMesh is:
 ```
     sudo apt-get install build-essential libx11-dev libxrandr-dev libxinerama-dev
-	libxcursor-dev freeglut3-dev libxi-dev libxcursor-dev
+	libxcursor-dev freeglut3-dev libxi-dev
 ```
 
 #### Optional tools
