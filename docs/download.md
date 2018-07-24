@@ -31,7 +31,7 @@ RINGMesh is available under two different packages:
 ### Latest Release
 [<button type="button" class="btn btn-success">
 **Latest Release**
-</button>](https://github.com/ringmesh/RINGMesh/archive/5.0.0.zip)
+</button>](https://github.com/ringmesh/RINGMesh/archive/5.1.0.zip)
 
 ### Other Releases
 Find all RINGMesh Release on [GitHub](https://github.com/ringmesh/RINGMesh/releases).
