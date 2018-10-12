@@ -3,12 +3,12 @@
 ## RINGMesh Configuration options
 RINGMesh comes with a CMake configuration file. Several options can be selected in order to build the project that fits your needs:
 
- * `BUILD_GEOGRAM_WITHOUT_EXE`: RINGMesh build the GEOGRAM project. This option allow to build the GEOGRAM libraries used in RINGMesh
- without building executable from GEOGRAM.
- * `BUILD_RINGMESH_VIEW`: Build the viewer to visualize the GeoModel data structure.
- * `RINGMESH_WITH_GRAPHICS`: Build graphical libraries of RINGMesh and GEOGRAM.
- * `RINGMESH_WITH_TESTS`: Build the RINGMesh test environment.
- * `RINGMESH_WITH_TETGEN`: Build the [TetGen](http://wias-berlin.de/software/index.jsp?id=TetGen&lang=1) wrapper library. 
+ * `BUILD_GEOGRAM_WITHOUT_EXE`: Builds the GEOGRAM libraries used in RINGMesh without building executable from GEOGRAM. *(This option is availabe if CMake is in advanced mode)*
+ * `RINGMESH_WITH_GRAPHICS`: Builds graphical libraries of RINGMesh and GEOGRAM.
+ 	* `BUILD_RINGMESH_VIEW`: *(if option `RINGMESH_WITH_GRAPHICS` is on)* Builds the viewer to visualize the GeoModel data structure.
+ * `RINGMESH_WITH_RESQML2` : Builds RESQML2 support: compile with FesAPI (not avaible for MACOS) 	
+ * `RINGMESH_WITH_TESTS`: Builds the RINGMesh test environment.
+ * `RINGMESH_WITH_TETGEN`: Builds the [TetGen](http://wias-berlin.de/software/index.jsp?id=TetGen&lang=1) wrapper library. 
  This option provides functionalities to mesh and re-mesh volume and surfaces with TetGen. Please make sure that you respect the 
  [AGPLv3 license](http://www.gnu.org/licenses/agpl-3.0.en.html) before checking that option.
  * `RINGMESH_WITH_TUTORIALS`: Build the tutorial environment.
@@ -33,10 +33,14 @@ you need to install the development package of:
  * [FreeGlut](http://freeglut.sourceforge.net/)
  * [X Input Extension](https://www.x.org)
 
+ To compile FesAPI on a Linux OS you need to install the development package of:
+
+ * [UUID](https://linux.die.net/man/3/libuuid)
+
 The command line under Debian-based OS to install all the necessary packages to
 compile RINGMesh is:
 ```
-    sudo apt-get install build-essential libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev freeglut3-dev libxi-dev
+    sudo apt-get install build-essential libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev freeglut3-dev libxi-dev uuid-dev
 ```
 
 #### Optional tools
