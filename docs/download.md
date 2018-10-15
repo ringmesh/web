@@ -45,21 +45,21 @@ Packages are built with graphics and utilities (see [configuration options](/try
 <div>
 [<button type="button" class="btn btn-success">
 **Linux** <img src="../img/linux-white.png" alt="linux logo" height="25">
-</button>](nav_item.download/RINGMesh-master-Linux.tar.gz)
+</button>](download/RINGMesh-master-Linux.tar.gz)
 </div>
 <div>
 [<button type="button" class="btn btn-success">
 **MacOS (in progress)** <img src="../img/apple-white.png" alt="apple logo" height="25">
-</button>](nav_item.download/RINGMesh-master-Darwin.tar.gz)
+</button>](download/RINGMesh-master-Darwin.tar.gz)
 </div>
 <div>
 [<button type="button" class="btn btn-success">
 **Windows (VS2013)** <img src="../img/windows-white.png" alt="windows logo" height="25">
-</button>](nav_item.download/RINGMesh-master-Win64-vs2013.zip)
+</button>](download/RINGMesh-master-Win64-vs2013.zip)
 </div>
 <div>
 [<button type="button" class="btn btn-success">
 **Windows (VS2015)** <img src="../img/windows-white.png" alt="windows logo" height="25">
-</button>](nav_item.download/RINGMesh-master-Win64-vs2015.zip)
+</button>](download/RINGMesh-master-Win64-vs2015.zip)
 </div>
 </div>
