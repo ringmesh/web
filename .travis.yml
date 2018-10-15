@@ -6,7 +6,6 @@ install:
   - pip install mkdocs
 script:
   - mkdocs build  --verbose --clean --strict
-  - cp download/* site/download/
   - echo ringmesh.org > site/CNAME
 deploy:
  provider: pages
