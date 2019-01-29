@@ -14,7 +14,7 @@
             {%- endif %}
 
           {%- block site_name %}
-            <a class="navbar-brand" href="{{ nav.homepage.url }}">{{ config.extra.site_name_short }}</a>
+            <a class="navbar-brand" href="{{ nav.homepage.url|url }}">{{ config.extra.site_name_short }}</a>
           {%- endblock %}
         </div>
 
@@ -39,7 +39,7 @@
                 {%- else %}
                     {% if not nav_item.title.startswith("_") %}
                         <li {% if nav_item.active %}class="active"{% endif %}>
-                            <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                            <a href="{{ nav_item.url|url  }}">{{ nav_item.title }}</a>
                         </li>
                     {% endif %}
                 {%- endif %}
@@ -52,7 +52,7 @@
               {%- block repo %}
                 {%- if config.repo_url %}
                     <li>
-                        <a href="{{ config.repo_url }}">
+                        <a href="{{ config.repo_url|url  }}">
                             {%- if config.repo_name == 'GitHub' %}
                                 <i class="fa fa-github"></i>&nbsp
                             {%- elif config.repo_name == 'Bitbucket' -%}
