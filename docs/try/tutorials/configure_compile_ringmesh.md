@@ -90,7 +90,7 @@ You can generate the documentation using the following command in the `RINGMesh_
 ```bash
 make doc-devkit
 ```
-Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/config/ringmesh/devkit/html/index.html`
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root/build/config/devkit/html/index.html`
 
 ## Windows configure and compile
 
@@ -127,7 +127,7 @@ the project `SUPERBUILD.sln`.
  * Open the project `SUPERBUILD.sln` with the visual studio version that you choose during the configuration step.
  * Build the solution.
  
-All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository: `RINGMesh_root/build/ringmesh`.
+All the RINGMesh third parties have now been compiled, installed and the `RINGMesh.sln` project have been created in the repository: `RINGMesh_root/build`.
 
  * Open the project `RINGMesh.sln`.
  * Build the solution. 
@@ -143,10 +143,10 @@ Note: Visual Studio has on pile per configuration mode. You must link consistent
 ### Compiling the documentation
 
 If Doxygen (version >= 1.8.2) is installed on your computer, a target ```doc-devkit``` is built during RINGMesh configuration. You can generate the documentation by:
-* Opening the solution which is in `RINGMesh_root/build/ringmesh/RINGMesh.sln` in Visual Studio
+* Opening the solution which is in `RINGMesh_root/build/RINGMesh.sln` in Visual Studio
 * Building the doc-devkit
 
-Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\ringmesh\devkit\html\index.html`
+Open the RINGMesh documentation with your favorite web browser at:  `RINGMesh_root\build\devkit\html\index.html`
 
 ## Mac OS configure and compile
 
@@ -181,11 +181,11 @@ As in Linux except for the packages.
 
 #### Using Xcode IDE
 You need to install Xcode IDE.
-Open the build/ringmesh/RINGMesh.xcodeproj with Xcode IDE,
+Open the build/RINGMesh.xcodeproj with Xcode IDE,
 and then compile (as in Windows with VisualStudio).
 Or use these command lines:
 ```
-cd build/ringmesh
+cd build
 xcodebuild -project RINGMesh.xcodeproj -alltargets -configuration Release
 ```
 To build in Debug, replace "Release" by "Debug" after "-configuration".

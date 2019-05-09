@@ -46,8 +46,8 @@ Pre-compiled packages have been built with the `RINGMESH_WITH_UTILITIES` option.
 
 After building RINGMesh with utilities a set of executable is generated and can be executed from the RINGMesh install directory:
 
- * Window: `RINGMesh\build\ringmesh\bin\CONFIG\**.exe`
- * Linux: `RINGMesh\build\ringmesh\CONFIG\bin\**.exe`
+ * Window: `RINGMesh\build\bin\CONFIG\**.exe`
+ * Linux: `RINGMesh\build\CONFIG\bin\**.exe`
   
 Here is the list of the RINGMesh utilities:
 
