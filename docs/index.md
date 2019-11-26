@@ -3,6 +3,10 @@
 <center>
 <img src="img/ringmesh.png" alt="logo" width="350"/>
 </center>
+ 
+RINGMesh has now been industrialized by [Geode-solutions](https://geode-solutions.com/) with the [OpenGeode](https://geode-solutions.com/opengeode) platform. 
+
+**The legacy code is still available but the [RING team](https://www.ring-team.org/home) supports, uses and contributs to [OpenGeode](https://geode-solutions.com/opengeode).** 
 
 RINGMesh is a C++ open-source platform for manipulating meshes of geological models. RINGMesh is neither a geomodeler nor a mesh generation tool, but it can be used to develop geomodeling applications, such as meshing and numerical simulation tools.
 
