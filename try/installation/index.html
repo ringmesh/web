@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+      <title>RINGMesh - Platform for geological models</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/ringmesh.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">RINGMesh</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Try ! <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../try_online/">Try online</a>
+</li>
+                            
+                            
+                                
+<li class="active">
+    <a href="./">Get started</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../documentation/">Doxygen documentation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../tutorials/">Tutorials</a>
+</li>
+                            
+                            
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../../features/geomodel/">GeoModel</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/mesh/">Mesh</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/validity/">Validity</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../features/file_formats/">Supported file formats</a>
+</li>
+                            
+                        </ul>
+                    </li>
+                    
+                        <li >
+                            <a href="../../gallery/">Gallery</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../glossary/">Glossary</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../download/">Download</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../about/">About</a>
+                        </li>
+                    
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/ringmesh/ringmesh/">
+                                <i class="fa fa-github"></i>&nbspGitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#get-started-with-ringmesh">Get Started with RINGMesh</a></li>
+            <li><a href="#about-the-source-code">About the source code</a></li>
+            <li><a href="#about-pre-compiled-packages">About pre-compiled packages</a></li>
+            <li><a href="#develop-with-ringmesh">Develop with RINGMesh</a></li>
+            <li><a href="#ringmesh-utilities">RINGMesh Utilities</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="get-started-with-ringmesh">Get Started with RINGMesh</h1>
+<h2 id="about-the-source-code">About the source code</h2>
+<h3 id="download-the-source-code">Download the source Code</h3>
+<p>The source code is available by:</p>
+<ol>
+<li>cloning the directory from <a href="https://github.com/ringmesh/RINGMesh">GitHub</a></li>
+<li>downloading an archive of the sources (<a href="https://github.com/ringmesh/RINGMesh/releases">Releases</a> 
+ or <a href="https://github.com/ringmesh/RINGMesh/archive/master.zip">latest developments</a>) </li>
+</ol>
+<p>For more information, please follow the instructions of the <a href="/download">Download</a> section. </p>
+<h3 id="configure-and-compile-the-source-code">Configure and compile the source Code</h3>
+<p>RINGMesh is tested under:</p>
+<ul>
+<li>Linux (64bits)</li>
+<li>Windows (64 bits)</li>
+<li>Mac OS (64 bits)</li>
+</ul>
+<p>Please find the corresponding instruction in the <a href="/try/tutorials/configure_compile_ringmesh">configure and compile tutorial</a>. </p>
+<h2 id="about-pre-compiled-packages">About pre-compiled packages</h2>
+<p>Pre-compiled packages are available in the <a href="/download">Download</a> section.
+After having downloaded the archive that correspond to your operating system, 
+please extract the files in the folder where you want to use it.</p>
+<h2 id="develop-with-ringmesh">Develop with RINGMesh</h2>
+<p>RINGMesh is a library that provide a development API with functions that can be used in an external project.
+We provide an example of a project that set the dependency with RINGMesh and use some functions from the RINGMesh API.</p>
+<p>Please Look at the <a href="https://github.com/ringmesh/RINGMeshPluginExample">RINGMesh Plugin example on GitHub</a>.</p>
+<p>Once your project is started, you can follow some <a href="/try/tutorials">tutorials</a> to learn more about the RINGMesh API.</p>
+<h2 id="ringmesh-utilities">RINGMesh Utilities</h2>
+<p>To access the utilities RINGMesh needs to be configured and compiled with the corresponding option.
+If you did not check that option during the configuration using CMake please go back to the 
+<a href="/try/tutorials/configure_compile_ringmesh">configure and compile tutorial</a> and select the <code>RINGMESH_WITH_UTILITIES</code> option.
+Pre-compiled packages have been built with the <code>RINGMESH_WITH_UTILITIES</code> option. </p>
+<p>After building RINGMesh with utilities a set of executable is generated and can be executed from the RINGMesh install directory:</p>
+<ul>
+<li>Window: <code>RINGMesh\build\ringmesh\bin\CONFIG\**.exe</code></li>
+<li>Linux: <code>RINGMesh\build\ringmesh\CONFIG\bin\**.exe</code></li>
+</ul>
+<p>Here is the list of the RINGMesh utilities:</p>
+<ul>
+<li><code>ringmesh-convert</code>: Load a GeoModel, check its validity and export GeoModel. 
+ Supported input and output file formats are listed <a href="/features/file_formats">here</a>. 
+ Performed validity checks performed are explained <a href="/features/validity">here</a>.</li>
+<li><code>ringmesh-edit-infos</code>: Edit information of a GeoModel (such as its name) and save this change in the same file (overwrite) or another one.</li>
+<li><code>ringmesh-mesh-quality</code>: Load a GeoModel and compute its cell quality. 
+ Several metrics are available and the results are stored as an Attribute on each cell.
+ Warning: this is only applicable on GeoModel with Regions meshed with tetrahedra.</li>
+<li><code>ringmesh-repair</code>: Load a Geomodel and repair some basic issues such as geometrical issues on meshes (duplicated vertices, degenerated mesh elements).</li>
+<li><code>ringmesh-rotate</code>: Load and rotate a GeoModel using a reference frame and an angle.</li>
+<li><code>ringmesh-stats</code>: Load and print statistics on number of entities, and mesh elements in the GeoModel.</li>
+<li><code>ringmesh-surface-convert</code>: Load a set of TSurfs (Gocad file format) and output a set on triangulated surfaces 
+ into a file format supported by GEOGRAM.</li>
+<li><code>ringmesh-tetrahedralize</code>: Load a boundary representation (B-Rep) and fill its Regions with tetrahedra using TetGen or another mesher.</li>
+<li><code>ringmesh-translate</code>: Load and translate a GeoModel using a 3D vector.</li>
+</ul>
+<p>A description of both functionalities and input parameters is displayed while launching the executable.</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2018, Association Scientifique pour la Géologie et ses Applications <a href="http://asgageol.univ-lorraine.fr/">(ASGA)</a></p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

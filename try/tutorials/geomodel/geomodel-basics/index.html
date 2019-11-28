@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+      <title>RINGMesh - Platform for geological models</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link href="../../../../css/ringmesh.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../..">RINGMesh</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Try ! <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../../../try_online/">Try online</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../../installation/">Get started</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../../documentation/">Doxygen documentation</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../">Tutorials</a>
+</li>
+                            
+                            
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../../../../features/geomodel/">GeoModel</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../../../features/mesh/">Mesh</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../../../features/validity/">Validity</a>
+</li>
+                            
+                            
+                                
+<li >
+    <a href="../../../../features/file_formats/">Supported file formats</a>
+</li>
+                            
+                        </ul>
+                    </li>
+                    
+                        <li >
+                            <a href="../../../../gallery/">Gallery</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../../../glossary/">Glossary</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../../../download/">Download</a>
+                        </li>
+                    
+                    
+                        <li >
+                            <a href="../../../../about/">About</a>
+                        </li>
+                    
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://github.com/ringmesh/ringmesh/">
+                                <i class="fa fa-github"></i>&nbspGitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#basic-functionalities-on-geomodel">Basic functionalities on GeoModel</a></li>
+            <li><a href="#geomodel-io">GeoModel I/O</a></li>
+            <li><a href="#basic-usage">Basic Usage</a></li>
+            <li><a href="#manipulate-geomodelentities">Manipulate GeoModelEntities</a></li>
+            <li><a href="#manipulate-geomodelmesh">Manipulate GeoModelMesh</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="basic-functionalities-on-geomodel">Basic functionalities on GeoModel</h2>
+<p>The most efficient way to build a GeoModel is to import its geometry and topology from a
+geomodeler. This tutorial presents a simple code to load manipulate and export <code>GeoModel</code>.</p>
+<p>A part of the code associated to this tutorial is available in the <code>RINGMesh/doc/tutorials/src/geomodel-basic.cpp</code>.
+It can be compiled by selecting the <code>RINGMESH_WITH_TUTORIALS</code> option during the RINGMesh configuration with CMake. </p>
+<h3 id="geomodel-io">GeoModel I/O</h3>
+<p>GeoModel stores the geometry and the topology of a geological model. It can be imported from boundary
+representation or volumetric representation file.
+RINGMesh uses an extensible design to handle various file formats.
+The file extension is the key for selecting the suitable loader/saver.
+The Input/Output file formats currently supported by RINGMesh are listed <a href="/features/file_formats">here</a>.</p>
+<p>A GeoModel can be loaded and saved as follow:</p>
+<pre><code class="c++">//include for RINGMesh::GeoModel3D
+#include &lt;ringmesh/geomodel/core/geomodel.h&gt; 
+//include for RINGMesh::geomodel_load &amp; RINGMesh::geomodel_save
+#include &lt;ringmesh/io/io.h&gt; 
+
+ // GeoModel instantiation in 3D
+ GeoModel3D geomodel ;
+
+ // give the path to your working directory
+ // give either the relative path from installation directory
+ // or an absolute path.
+ std::string path = &quot;path/to/inputs_output_files/&quot;
+
+ // LOADING
+ // filename to load
+ // the file extension is the factory key.
+ std::string input_file_name = &quot;your_input_model.key&quot;;
+
+ // function to load a geomodel from input_file_name
+ geomodel_load( geomodel, path + input_file_name ) ;
+
+ // SAVING
+ // path to the file to write
+ // the file extension is the factory key.
+ std::string output_file_name = &quot;your_output_model.key&quot;;
+ geomodel_save(geomodel, path + output_file_name);
+</code></pre>
+
+<p>When a GeoModel is loaded, its validity is automatically checked and resulting information
+are displayed.</p>
+<h4 id="try">Try:</h4>
+<ul>
+<li>Load the <code>ModelA1.ml</code> (a 3D model boundary representation from gocad available in the <code>RINGMesh/data</code> directory).</li>
+<li>Save it to the RINGMesh file format (.gm)<code>ModelA1.gm</code>.</li>
+<li>Open and look at the .gm file <a href="/features/file_formats">see description</a>.</li>
+</ul>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>Several functions can be called to study/manipulate/repair the GeoModel:</p>
+<pre><code class="c++">//print the geomodel statistics in the command terminal
+#include &lt;ringmesh/geomodel/core/geomodel_api.h&gt;
+print_geomodel_mesh_stats( geomodel ) ;
+
+//investigate the validity of the geomodel
+#include &lt;ringmesh/geomodel/tools/geomodel_validity.h&gt;
+is_geomodel_valid( geomodel ) ;
+
+//translate geomodel along vertical axis
+#include &lt;ringmesh/geomodel/tools/geomodel_tools.h&gt;
+translate(geomodel, {0,0,100}) ;
+</code></pre>
+
+<p>If RINGMesh is compiled with a meshing sofware:</p>
+<pre><code class="c++">//build volumetric mesh in geomodel regions using TetGen [Si,2015]
+#include &lt;geogram/basic/command_line.h&gt;
+GEO::CmdLine::set_arg( &quot;algo:tet&quot;, &quot;TetGen&quot; );
+
+#include &lt;ringmesh/geomodel/tools/geomodel_tools.h&gt;
+tetrahedralize( geomodel );
+</code></pre>
+
+<p>This is not an exaustive list of functionalities. Please look at the doxygen documentation.</p>
+<p>Try:</p>
+<ul>
+<li>Load the <code>ModelA1.ml</code> (a 3D model boundary representation from gocad available in the <code>RINGMesh/data</code> directory).</li>
+<li>Print statistics on the imported geomodel.</li>
+<li>Mesh it with TetGen.</li>
+<li>Print statistics on the imported geomodel.</li>
+<li>Save it to the RINGMesh file format (.gm) <code>ModelA1.gm</code>.</li>
+<li>Open and analyse the .gm file <a href="/features/file_formats">see description</a>.</li>
+</ul>
+<h3 id="manipulate-geomodelentities">Manipulate GeoModelEntities</h3>
+<p>This part is dedicated to GeoModel toplogical Entities <a href="/features/geomodel">see GeoModel</a>.
+It shows how to access and manipulate geometrical and geological enties either
+by their global index or their adjacency relationships.</p>
+<h4 id="geomodelmeshentities">GeoModelMeshEntities</h4>
+<p>This example shows how to iterates on geometrical enties that define the boundary representation of the model.</p>
+<pre><code class="c++">// Iterates on the Surfaces of a GeoModel and looks for boundaries and incident_entities
+for( const auto&amp; surface : geomodel.surfaces() )
+{
+    // Iterates on boundary lines
+    for( auto boundary_id : range( surface.nb_boundaries() )
+    {
+        const auto&amp; line = surface.boundary( boundary_id );
+        ...
+    }
+    // Iterates on incident regions (max. 2 incident regions)
+    for( auto incident_id : range( surface.nb_incident_entities() )
+    {
+        const auto&amp; region = surface.incident_entity( incident_id );
+        ...
+    }
+}
+</code></pre>
+
+<h4 id="geomodelgeologicalentities">GeoModelGeologicalEntities</h4>
+<p>This example shows how to iterate on geological enties. It allows to access to geometrical entities that belong
+to the same geological feature.</p>
+<pre><code class="c++">// Iterates on the Interfaces of a GeoModel and looks for children (being GeoModelMeshEntities)
+for( const auto&amp; cur_interface : geomodel.geol_entities( Interface::type_name_static() ) )
+{
+    // Iterates on boundary lines
+    for( auto child_id : range( cur_interface.nb_children() )
+    {
+        const auto&amp; surface = cur_interface.child( child_id );
+        ...
+    }
+}
+
+// Iterates on the Surfaces of a GeoModel and looks for them parent of type Interface
+for( const auto&amp; cur_surface : geomodel.surfaces() )
+{
+    if( cur_surface.has_parent( Interface::type_name_static() ) )
+    {
+        const auto&amp; parent = cur_surface.parent( Interface::type_name_static() );
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="manipulate-geomodelmesh">Manipulate GeoModelMesh</h3>
+<p>The GeoModelMesh is made of four data bases to provide a global and unique indexing of mesh component.
+This ease a global iteration through the GeoModel.</p>
+<pre><code class="c++">//include for RINGMesh::GeoModelMesh
+#include &lt;ringmesh/geomodel/core/geomodel_mesh.h&gt;
+
+// Build GeoModelMesh
+GeoModelMesh gmm(geomodel);
+
+// Iterates on the RINGMesh::GeoModelMesh (gmm) vertices without redundancy
+for( auto v : range( gmm.vertices.nb() ) )
+{
+    const auto&amp; point = gmm.vertices.vertex( v );
+}
+
+// Iterates on the RINGMesh::GeoModelMesh (gmm) facets without redundancy
+for( auto surface_id : range( gmm.geomodel().nb_surfaces() ) )
+{
+    // Each surface can be stored twice if it is at the interface of two meshes
+    // It is also possible to iterate only on triangles or quads
+    for( auto polygon_id : range( gmm.polygons.nb_polygons( surface_id ) ) )
+    {
+        auto polygon_id_in_the_mesh = gmm.polygons.polygon( surface_id, polygon_id );
+        std::cout &lt;&lt; &quot;Nb vertices in the polygon: &quot; &lt;&lt;
+            gmm.polygons.nb_vertices( polygon_id_in_the_mesh ) &lt;&lt; std::endl;
+    }
+}
+
+// Iterates on the RINGMesh::GeoModelMesh (gmm) cells and their adjacent cells
+for( auto region_id : range( gmm.geomodel().nb_regions() ) ) {
+    // It is also possible to iterate only on a specific cell type
+    for( auto cell_id : range( gmm.cells.nb_cells( region_id ) ) )
+    {
+        auto cell_in_gmm = gmm.cells.cell( region_id, cell_id );
+        for( auto facet_id : range( gmm.cells.nb_facets( cell_in_gmm ) ) )
+        {
+            // Global cell adjacent index
+            auto global_c_adj = gmm.cells.adjacent( { cell_in_gmm, facet_id } );
+            if( global_c_adj == NO_ID )
+            {
+                // The cell is on the border
+                ...
+            }
+            else
+            {
+                ...
+            }
+        }
+    }
+}
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2018, Association Scientifique pour la Géologie et ses Applications <a href="http://asgageol.univ-lorraine.fr/">(ASGA)</a></p>
+        </footer>
+        <script>var base_url = '../../../..';</script>
+        <script data-main="../../../../mkdocs/js/search.js" src="../../../../mkdocs/js/require.js"></script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
