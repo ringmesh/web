@@ -2,9 +2,9 @@
 
 RINGMesh is available under two different packages:
 
- 1. Source code packages. Please follow [configuration and compilation procedure](http://www.ringmesh.org/try/installation).
+ 1. Source code packages. Please follow [configuration and compilation procedure](/try/installation).
  1. Pre-compiled packages. If your system is compatible you can extract files from the archive and 
- [use RINGMesh directly](http://www.ringmesh.org/try/installation).
+ [use RINGMesh directly](/try/installation).
 
 ## Download the source code
 ### Unreleased Developments
